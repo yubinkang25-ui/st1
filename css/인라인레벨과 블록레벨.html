@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인라인 레벨과 블록레벨</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{
+
+      /* 부모의 content영역의 80% */
+      
+      background-color: #ccc;
+    }
+    .inner{
+      width:80%;
+      margin:0 auto;
+      padding: 50px 0;
+      /* background-color: #ef6; */
+    }
+    .box{
+      /* margin: 50px auto; */
+      background-color: #fbf;
+      margin-bottom: 50px;
+    }
+
+  .box:last-child {
+    margin-bottom: 0;
+  }
+
+  .box span{
+    color: #f00;
+    font-weight: bold;
+    font-size: large;
+    background-color: #ef8;
+    padding: 16px;
+    margin: 8px;
+    width: 200px;
+  }
+  </style>
+</head>
+<body>
+  <!-- .container>.box.box$*2>lorem -->
+  <div class="container">
+    <div class="inner">
+      <div class="box box1">
+        Lorem <span>ipsum</span> dolor sit amet consectetur, adipisicing <span>elit</span>. Atque sapiente corrupti velit
+        voluptates, ea eveniet quo animi nobis perspiciatis in eum vitae iure beatae nihil debitis accusantium, facilis
+        ullam libero!
+      </div>
+      <div class="box box2">
+        Obcaecati reprehenderit unde laborum aut fugit accusantium at quisquam exercitationem sapiente
+        ab, pariatur autem et aliquid ea magni delectus excepturi laboriosam adipisci aperiam deserunt dolorum accusamus
+        vitae incidunt nostrum! Exercitationem.
+      </div>
+      <div class="box box3">
+        Obcaecati reprehenderit unde laborum aut    fugit accusantium at quisquam exercitationem sapiente
+        ab, pariatur autem et aliquid ea magni delectus excepturi laboriosam adipisci aperiam deserunt dolorum accusamus
+        vitae incidunt nostrum! Exercitationem.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
