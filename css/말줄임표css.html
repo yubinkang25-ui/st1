@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표css</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      margin: 50px;
+      padding: 1em;
+      background-color: #ccc;
+    }
+    /* 여러줄 말 줄임표 */
+    .box1{
+      /* white-space: normal; */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      width: 80%;
+      height: 70px;
+    }
+    /* 한 줄 말줄임표 */
+    .box2{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .box3,
+    .box4,
+    .box5{
+      width: 400px;
+      height: 40px;
+    }
+    .box3{overflow: visible;}
+    .box4{overflow: hidden;}
+    .box5{overflow: auto;}
+  </style>
+</head>
+<body>
+<div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores animi laboriosam repudiandae quo, ex neque autem beatae perferendis, nostrum commodi iusto quasi libero placeat, perspiciatis incidunt! Officia rerum in beatae laboriosam repudiandae quo, ex neque autem beatae perferendis, nostrum commodi iusto quasi libero placeat, perspiciatis incidunt! Officia rerum in beatae.</div>
+<div class="box box2">Nam soluta, odio sed rem aliquid illum laborum cumque harum ipsum? Provident ex odit ad distinctio in, quod laudantium molestias praesentium sit nam quasi optio asperiores, repudiandae exercitationem. Tenetur, rerum.</div>
+
+<hr>
+
+<div class="box box3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum dignissimos ratione eveniet. Ullam, dolorem fuga ratione accusamus aut maxime facilis asperiores dolor libero odio facere tempore sed velit accusantium voluptatem?</div>
+<div class="box box4">Adipisci sed illo tempore nulla unde. Aperiam optio quis impedit dolorum illo quidem tempore sequi reiciendis, et eos esse nostrum accusamus nam ex, ducimus ipsa perspiciatis maiores explicabo non tenetur!</div>
+<div class="box box5">Adipisci sed illo tempore nulla unde. Aperiam optio quis impedit dolorum illo quidem tempore sequi reiciendis, et eos esse nostrum accusamus nam ex, ducimus ipsa perspiciatis maiores explicabo non tenetur!</div>
+</body>
+</html>

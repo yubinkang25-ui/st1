@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a태그와 관련된 가상선택자</title>
+  <style>
+    body{
+      color: #f8c;
+    }
+    a{
+      /* text-decoration: none;
+      color: #333;
+       */
+    }
+    /* a:link{
+      color: #000;
+    }
+    a:visited{
+      color: #000;
+    }
+    a:hover{
+      color: #f00;
+    }
+    a:active{
+      color: #000;
+    } */
+     a:link,
+     a:visited,
+     a:active{
+      color: #000;
+      text-decoration: none;
+     }
+     a:hover{
+      color:#f00;
+      text-decoration: underline;
+      font-weight: bold;
+     }
+     .test1{
+      color: #000;
+     }
+     .test1:hover{
+      background-color: #000;
+      color: #fff;
+     }
+     .test1.test2:hover{
+      background-color: #f6c;
+      color:#cff;
+      border-left: 4px solid #202;      
+     }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="https://www.naver.com">menu1</a></li>
+    <li><a href="https://google.com">menu2</a></li>
+    <li><a href="https://daum.net">menu3</a></li>
+    <li><a href="https://nate.com">menu4</a></li>
+  </ul>
+  <p class="test1">Lorem ipsum dolor sit.</p>
+  <div class="test2 test1">Lorem, ipsum.</div>
+</body>
+</html>
