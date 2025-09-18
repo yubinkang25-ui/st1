@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attrachment</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .sect{
+      /* background-color: #ccc; */
+      height: 100vh;
+    }
+    .sect .title{
+      font-size: 100px;
+      font-weight: bold;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    .section1{
+      background-color: #f6c;
+    }
+    .section2{
+      background-image: url(./images/bg.jpg);
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      /*  */
+    }
+    .section3{
+      background-color: #6f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="sect section1">
+      <p class="title">section title1</p>
+    </section>
+    <section class="sect section2">
+      <p class="title">section title2</p>
+    </section>
+    <section class="sect section3">
+      <p class="title">section title3</p>
+    </section>
+  </div>
+</body>
+</html>
