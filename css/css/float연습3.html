@@ -20,10 +20,45 @@
     }
     /* banner */
     .banner-wrap{}
-    .banner-list{}
+    .section-title{
+      box-sizing: border-box;
+      width: 80%;
+      min-width: 1000px;
+      max-width: 1400px;
+      font-size: 2rem;
+      margin: 50px auto 20px;
+      /* border-top: 10px solid #f00; */
+      /* padding-left: 1rem; */
+      /* background-color: #ccc; */
+    }
+    /* .section-title::before{ */
+    .section-title::after{
+      content: "";
+      width: 2rem; height: 2px;
+      background-color: #000;
+      display: block;
+      clear: both;
+    }
+    .banner-list{
+      width: 80%;
+      min-width: 1000px;
+      max-width: 1400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .banner-list::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
     .banner-item{
-      width: calc(33.33% - 10px) ;
+      width: calc(33.33% - 20px) ;
       background-color: #ccc;
+      float: left;
+      margin-right: 20px;
+    }
+    .banner-item:last-child{
+      margin-right: 0;
     }
     .banner-item>a{
       display: block;
@@ -55,7 +90,26 @@
 </head>
 <body>
   <div class="banner-wrap">
+    <div class="section-title">BEST</div>
     <ul class="banner-list">
+      <li class="banner-item">
+        <a href="https://naver.com">
+          <div class="thubm">사진</div>
+          <div class="desc">
+            <p class="title">배너 제목</p>
+            <p class="goto">자세히 보기</p>
+          </div>
+        </a>
+      </li>
+      <li class="banner-item">
+        <a href="https://naver.com">
+          <div class="thubm">사진</div>
+          <div class="desc">
+            <p class="title">배너 제목</p>
+            <p class="goto">자세히 보기</p>
+          </div>
+        </a>
+      </li>
       <li class="banner-item">
         <a href="https://naver.com">
           <div class="thubm">사진</div>
