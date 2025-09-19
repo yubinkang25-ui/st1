@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float 연습3 -3단배너</title>
+  <style>
+    /* body{color:#f00;} */
+    *{margin: 0; padding: 0;}
+    /* common */
+    ol,ul{list-style: none;}
+    a:link,
+    a:visited,
+    a:active{
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #f00;
+    }
+    /* banner */
+    .banner-wrap{}
+    .banner-list{}
+    .banner-item{
+      width: calc(33.33% - 10px) ;
+      background-color: #ccc;
+    }
+    .banner-item>a{
+      display: block;
+      background-color: #ef6;
+    }
+    .banner-item .thubm{
+      background-color: #6fc;
+      /* width: auto; */
+      min-height: 200px;
+
+    }
+    .banner-item .desc{
+      /* background-color: transparent; */
+    }
+    .banner-item .title{
+      font-size: 2em;
+      padding-top: 0.5em;
+
+    }
+    .banner-item .goto{
+      font-size: 1em;
+      padding-top: 0.5em;
+      text-decoration: underline;
+    }
+    .banner-item .goto:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner-wrap">
+    <ul class="banner-list">
+      <li class="banner-item">
+        <a href="https://naver.com">
+          <div class="thubm">사진</div>
+          <div class="desc">
+            <p class="title">배너 제목</p>
+            <p class="goto">자세히 보기</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
