@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float 연습1</title>
+</head>
+<style>
+*{margin: 0; padding: 0;}
+.warp{
+  background-color: #ccc;
+}
+header{
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  min-height: 50px;
+  background-color: #f00;
+}
+.container{
+  width: 1040px;
+  margin: 0 auto;
+  overflow: hidden; 
+  background-color: #aaa;
+}
+.container::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.lnb{
+  float: left;
+  width: 200px;
+  min-height: 400px;
+  margin-right: 20px;
+  background-color: #ef6;
+}
+.main-wrap{
+  float: left;
+  width: 600px;
+  min-height: 500px;
+  background-color: #6fc;
+}
+.main-wrap section{}
+.right{
+  float: right;
+  width: 200px;
+  min-height: 500px;
+  background-color: #fc6;
+}
+footer{
+  min-height: 100px;
+  background-color: #0f0
+}
+</style>
+
+<body>
+  <div class="warp">
+    <header>헤더</header>
+        <div class="container">
+          <div class="lnb">lnb</div>
+          <main class="main-wrap">
+            <section>메인 내용</section>
+          </main>
+          <aside class="right">관련내용</aside>
+        </div>
+        <footer>푸터</footer>
+  </div>
+</body>
+
+</html>
