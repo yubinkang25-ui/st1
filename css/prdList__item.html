@@ -14,29 +14,85 @@
   }
     /* 상품개별 */
     li.xans-record-{
+      box-sizing: border-box;
       width: 50%;
+      min-width: 400px;
       background-color: #ccc;
-  
+      border: 1px solid #000;
     }
-    .prdList__item{}
-    /* 상품섬네일 */
-    .prdList__item .thumbnail{}
-    .prdList__item .thumbnail>a{}
-    .prdList__item .thumbnail .likeButton{}
-    .prdList__item .thumbnail .icon__box{}
-    .prdList__item .thumbnail .icon__box span{}
-    .prdList__item .thumbnail .icon__sale_box{}
-    /* 상품설명 */
-    .prdList__item .discription{}
+    .prdList__item{
+      position: relative;
 
-    
+      box-sizing: inherit;
+      width: auto;
+      height: auto;
+    }
+    /* 상품섬네일 */
+    .prdList__item .thumbnail{
+      position: relative;
+      background-color: #6cf;
+    }
+    .prdList__item .thumbnail>a{
+      display:block;
+    }
+    .prdList__item .thumbnail>a img{
+      display: block;
+      min-height: 530px;
+      background-color: #fc6;
+    }
+    .prdList__item .thumbnail .likeButton{
+      width: 80px; height: 80px;
+      background-color: rgba(255, 0, 0, 0.5);
+      position: absolute;
+      left: 10px; top: 10px;
+      border-radius: 50%;
+      text-align: center;
+    }
+    .prdList__item .thumbnail .icon__box{
+      /* display: none; */
+      opacity: 0;
+      background-color: rgba(0,255,0,0.5);
+      position: absolute;
+      width: 100%;
+      left: 0%; top: 50%;
+      text-align: center;
+    }
+    .xans-record-:hover .prdList__item .thumbnail .icon__box{
+      /* display: block; */
+      opacity: 1;
+    }
+    .prdList__item .thumbnail .icon__box span{
+      display: inline-block;
+      width: auto; height: auto;
+      border: 1px solid #000;
+      margin-right: 20px;
+      padding: 0.5em 2em;
+      border-radius: 22px;
+    }
+    .prdList__item .thumbnail .sale_box{
+      width: 80px; height: 80px;
+      background-color: rgba(0, 0, 255, 0.5);
+      position: absolute;
+      right: 10px; top: 10px;
+      border-radius: 50%;
+      text-align: center;
+    }
+    /* 상품설명 */
+    .prdList__item .description{
+      position: absolute;
+      width: 100%; bottom: 0;
+      box-sizing: inherit;
+      min-height: 150px;
+      background-color: rgba(238, 238, 238, 0.5)
+      border: 1px solid #00f;
+    }
   </style>
 </head>
 <body>
   <li class="xans-record-">
     <div class="prdList__item">
-      <div class="thumnail">
-        <a href="">이미지</a>
+      <div class="thumbnail">
+        <a href=""><img src="" alt="샘플위치" width="400" height="530"></a>
         <div class="likeButton">좋아요버튼</div>
         <div class="icon__box">
           <span>wish</span>
