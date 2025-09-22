@@ -17,22 +17,35 @@
     .ec-base-product ul.prdList{
       width: auto;
       background-color: #333;
+      font-size: 0;
+      line-height: 0;
     }
     .ec-base-product ul.prdList>li{
+      display: inline-block;
       width:33.333%;
       background-color: #ccc;
       border: 1px solid #f00;
       box-sizing: border-box;
+      font-size: 1rem;
+      line-height: 1.4;
     }
-    .ec-base-product .prdList__item{}
+    .ec-base-product .prdList__item{
+      padding: 0 10px;
+    }
 
     .ec-base-product .prdList__item .thumbnail{}
-    .ec-base-product .prdList__item .thumbnail a{}
+    .ec-base-product .prdList__item .thumbnail a{
+      display: block;
+    }
     .ec-base-product .prdList__item .thumbnail a img{
-      width: 100%;
+      width: 100%; /* 부모의 너비를 따라서 유연한 크기 조정*/
+      display: block;
     }
 
-    .ec-base-product .prdList__item .description{}
+    .ec-base-product .prdList__item .description{
+      background-color: rgba(255,255,255,0.5);
+
+    }
     .ec-base-product .prdList__item .description .name{}
     .ec-base-product .prdList__item .description .spec{}
     .ec-base-product .prdList__item .description .spec li{}
@@ -44,9 +57,8 @@
       <li>
         <div class="prdList__item">
           <div class="thumbnail">
-            <a href=""></a>
+            <a href=""><img src="./images/imgi_15_20250919162144321_9267.jpg" alt="상품명 1"></a>
           </div>
-            <img src="./images/imgi_15_20250919162144321_9267.jpg" alt="상품명 1">
           <div class="description">
             <div class="name">상품명 1</div>
             <ul class="spec">
@@ -58,9 +70,8 @@
       <li>
         <div class="prdList__item">
           <div class="thumbnail">
-            <a href=""></a>
+            <a href=""><img src="./images/imgi_25_20250919160817340_2097.jpg" alt="상품명 2"></a>
           </div>
-            <img src="./images/imgi_25_20250919160817340_2097.jpg" alt="상품명 2">
           <div class="description">
             <div class="name">상품명 2</div>
             <ul class="spec">
@@ -72,9 +83,8 @@
       <li>
         <div class="prdList__item">
           <div class="thumbnail">
-            <a href=""></a>
+            <a href=""><img src="./images/imgi_35_4444696b794a425290366f6d2450cc3c~tplv-vod-noop.jpg" alt="상품명 3"></a>
           </div>
-            <img src="./images/imgi_35_4444696b794a425290366f6d2450cc3c~tplv-vod-noop.jpg" alt="상품명 3">
           <div class="description">
             <div class="name">상품명 3</div>
             <ul class="spec">
