@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뷰티의 카드 디자인</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{
+      margin: 50px;
+    }
+    ul,ol,li{list-style: none;}
+
+    .ec-base-product{
+      width: auto;
+    }
+    .ec-base-product ul.prdList{
+      width: auto;
+      background-color: #333;
+    }
+    .ec-base-product ul.prdList>li{
+      width:33.333%;
+      background-color: #ccc;
+      border: 1px solid #f00;
+      box-sizing: border-box;
+    }
+    .ec-base-product .prdList__item{}
+
+    .ec-base-product .prdList__item .thumbnail{}
+    .ec-base-product .prdList__item .thumbnail a{}
+    .ec-base-product .prdList__item .thumbnail a img{
+      width: 100%;
+    }
+
+    .ec-base-product .prdList__item .description{}
+    .ec-base-product .prdList__item .description .name{}
+    .ec-base-product .prdList__item .description .spec{}
+    .ec-base-product .prdList__item .description .spec li{}
+  </style>
+</head>
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList grid4">
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""></a>
+          </div>
+            <img src="./images/imgi_15_20250919162144321_9267.jpg" alt="상품명 1">
+          <div class="description">
+            <div class="name">상품명 1</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""></a>
+          </div>
+            <img src="./images/imgi_25_20250919160817340_2097.jpg" alt="상품명 2">
+          <div class="description">
+            <div class="name">상품명 2</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""></a>
+          </div>
+            <img src="./images/imgi_35_4444696b794a425290366f6d2450cc3c~tplv-vod-noop.jpg" alt="상품명 3">
+          <div class="description">
+            <div class="name">상품명 3</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
