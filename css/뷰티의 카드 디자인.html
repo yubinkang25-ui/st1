@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>뷰티의 카드 디자인</title>
+  <title>Document</title>
   <style>
     *{margin: 0; padding: 0;}
     body{
@@ -13,40 +13,63 @@
 
     .ec-base-product{
       width: auto;
+
+      /* background-color: #0f0;
+      border: 1px solid #080;
+      padding: 10px 0; */
     }
     .ec-base-product ul.prdList{
       width: auto;
-      background-color: #333;
-      font-size: 0;
+      /* background-color: #333; */
+      margin: 0 -10px;
+      font-size:0;
       line-height: 0;
     }
     .ec-base-product ul.prdList>li{
       display: inline-block;
-      width:33.333%;
-      background-color: #ccc;
-      border: 1px solid #f00;
+      width: 33.333%;
+      /* background-color: #ccc;
+      border: 1px solid #f00; */
       box-sizing: border-box;
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 1.4;
     }
     .ec-base-product .prdList__item{
+      position: relative;
+      overflow: hidden;
       padding: 0 10px;
     }
-
     .ec-base-product .prdList__item .thumbnail{}
     .ec-base-product .prdList__item .thumbnail a{
       display: block;
     }
     .ec-base-product .prdList__item .thumbnail a img{
-      width: 100%; /* 부모의 너비를 따라서 유연한 크기 조정*/
       display: block;
+      width: 100%;
     }
-
     .ec-base-product .prdList__item .description{
+      position: absolute;
+      width: calc(100% - 20px);
+      box-sizing: border-box;
+      left: 10px; bottom: 0;
+      transform: translateY(100%);
       background-color: rgba(255,255,255,0.5);
+      padding: 0.8em 1em;
+      opacity: 0;
+      transition: all 1s; 
+    }
+    .ec-base-product .prdList__item:hover .description{
+      /* left: 10px; bottom: 0; */
+      transform: translateY(0);
+      transition: transform 1s; 
+      opacity: 1;
 
     }
-    .ec-base-product .prdList__item .description .name{}
+
+    .ec-base-product .prdList__item .description .name{
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
     .ec-base-product .prdList__item .description .spec{}
     .ec-base-product .prdList__item .description .spec li{}
   </style>
@@ -60,7 +83,7 @@
             <a href=""><img src="./images/imgi_15_20250919162144321_9267.jpg" alt="상품명 1"></a>
           </div>
           <div class="description">
-            <div class="name">상품명 1</div>
+            <div class="name">상품명1</div>
             <ul class="spec">
               <li>10,000원</li>
             </ul>
@@ -73,7 +96,7 @@
             <a href=""><img src="./images/imgi_25_20250919160817340_2097.jpg" alt="상품명 2"></a>
           </div>
           <div class="description">
-            <div class="name">상품명 2</div>
+            <div class="name">상품명2</div>
             <ul class="spec">
               <li>10,000원</li>
             </ul>
@@ -86,7 +109,7 @@
             <a href=""><img src="./images/imgi_35_4444696b794a425290366f6d2450cc3c~tplv-vod-noop.jpg" alt="상품명 3"></a>
           </div>
           <div class="description">
-            <div class="name">상품명 3</div>
+            <div class="name">상품명3</div>
             <ul class="spec">
               <li>10,000원</li>
             </ul>
