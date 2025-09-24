@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유투브동영상-반응형</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{margin: 50px;}
+    .media-box{
+      width: 80%; 
+      max-width: 768px; 
+      min-width: 360px;
+    }
+    .media-box .media-wrap{
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+    .media-box .media-wrap iframe{
+      display: block;
+      width: 100%;
+      height: 100%;
+}
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="media-box">
+    <div class="media-wrap">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Kz2BsKX04ek?si=GjYakIYCSHh305tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+ </div>
+</body>
+</html>
