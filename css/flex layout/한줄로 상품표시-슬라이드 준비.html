@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한줄로 상품표시-슬라이드준비</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{
+      margin: 50px;
+    }
+    ul,ol,li{list-style: none;}
+
+    .ec-base-product{
+      overflow: hidden;
+      width: auto;
+    }
+    
+     .ec-base-product ul.prdList{
+      display: flex;
+      /* flex-direction: row; */
+      /* flex-wrap: nowrap; */
+      justify-content: start;
+      align-items: start;
+      width: auto;
+      margin: 0 -10px;
+      background-color: #ccc;
+    }
+    .ec-base-product ul.prdList>li{
+      flex: none;
+    }
+    /* 상품의 단 레이아웃 크기 지정 */
+    .ec-base-product ul.grid2>li{width: 50%;}
+    .ec-base-product ul.grid3>li{width: 33.33%;}
+    .ec-base-product ul.grid4>li{width: 25%;}
+    .ec-base-product ul.grid5>li{width: 20%;}
+
+    .ec-base-product .prdList__item{
+      position: relative;
+      overflow: hidden;
+      padding: 0 10px;
+    }
+    .ec-base-product .prdList__item .thumbnail{}
+    .ec-base-product .prdList__item .thumbnail a{
+      display: block;
+    }
+    .ec-base-product .prdList__item .thumbnail a img{
+      display: block;
+      width: 100%;
+    }
+    .ec-base-product .prdList__item .description{
+      position: absolute;
+      width: calc(100% - 20px);
+      box-sizing: border-box;
+      left: 10px; bottom: 0;
+      transform: translateY(100%);
+      background-color: rgba(255,255,255,0.5);
+      padding: 0.8em 1em;
+      opacity: 0;
+      transition: all 1s; 
+    }
+    .ec-base-product .prdList__item:hover .description{
+      transform: translateY(0);
+      transition: transform 1s; 
+      opacity: 1;
+
+    }
+
+    .ec-base-product .prdList__item .description .name{
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    .ec-base-product .prdList__item .description .spec{}
+    .ec-base-product .prdList__item .description .spec li{}
+  </style>
+</head>
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList grid5">
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=1" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명1</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=2" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명2</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=3" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명3</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=4" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명1</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=5" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명2</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=6" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명3</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=7" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명1</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=8" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명2</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="https://picsum.photos/800/800?random=9" alt=""></a>
+          </div>
+          <div class="description">
+            <div class="name">상품명3</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
