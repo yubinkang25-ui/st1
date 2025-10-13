@@ -1,0 +1,101 @@
+:root{
+  --primary-color: #000000;
+  --accent-color:#33ffaa;
+}
+
+.myname{
+  --myswiper-bullet-color:var(--primary-color);
+  --myswiper-border-radious: 9999px;
+  --myswiper-bullet-width: 8px;
+  --myswiper-bullet-height: 8px;
+  --myswiper-bullet-opacity: 0.4;
+  --myswiper-bullet-active-opacity:1;
+  --myswiper-bullet-active-color: var(--accent-color);
+  --myswiper-padding-bottom:48px;
+  --myswiper-scrollbar-botton:var(--myswiper-scrollbar-botton);
+  --myswiper-scrollbar-top:auto;
+  --myswiper-scrollbar-left:0;
+  --myswiper-scrollbar-height:4px;
+  --myswiper-scrollbar-width:100%;
+  --myswiper-nav-button-width:22px
+}
+.myname .myswiper-util{
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 10px;
+  height: var(--myswiper-padding-bottom);
+
+}
+/* 
+swiper navigation
+*/
+.myname .myswiper-nav{
+  display: flex;
+  gap: 20px;
+}
+.myname .swiper-button-next,
+.myname .swiper-button-prev {
+  position: static;
+  margin-top: 0;
+  width: var(--myswiper-nav-button-width);
+  height: var(--myswiper-nav-button-width);
+}
+
+.myname .swiper-button-next svg path,
+.myname .swiper-button-prev svg path{
+        fill: rgba(0,0,0,1);
+}
+
+
+.myname .swiper-button-next:hover svg path,
+.myname .swiper-button-prev:hover svg path{
+        fill: #000;
+}
+
+/* 
+pagination
+*/
+.myname.swiper{
+  padding-bottom: 30px;
+}
+.myname .swiper-pagination-bullet {
+    background: var(--myswiper-bullet-color);
+    border-radius: var(--myswiper-border-radious);
+    display: inline-block;
+    height: var(--myswiper-bullet-height);
+    opacity: var(--myswiper-bullet-opacity);
+    width: var(--myswiper-bullet-width);
+}
+.myname .swiper-pagination-bullet-active {
+ background-color: var(--myswiper-bullet-active-color);
+ opacity: var(--myswiper-bullet-active-opacity,1);
+}
+
+  .myname .swiper-pagination-progressbar .swiper-pagination-horizontal, 
+  .myname.swiper-horizontal .swiper-pagination-progressbar {
+        position: static;
+        height: var(--swiper-pagination-progressbar-size, 4px);
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: calc(100% - var(--myswiper-nav-button-width) * 2);
+        background: var(--primary-color);
+    }
+    
+.swiper-scrollbar.swiper-scrollbar-horizontal, 
+.swiper-horizontal>.swiper-scrollbar{
+
+        bottom: var(---myswiper-padding-bottom);
+        height: var(--myswiper-scrollbar-height,4px);
+        left: var(--myswiper-scrollbar-left);
+        position: absolute;
+        top: var(--myswiper-scrollbar-top);
+        width: calc(100% - var(--swiper-scrollbar-sides-offset, 1%) * 2);
+        z-index: 50;
+        background: rgba(0,0,0,0.5);
+        border-radius: 0;
+    }
+   .myname .swiper-scrollbar-drag {
+    background: rgba(0,0,0,1);
+   }  
