@@ -6,30 +6,26 @@
   <title>7 행열의 자동번복 auto-fit, auto fill</title>
   <style>
     *{margin: 0; padding: 0;}
-  body{margin: 50px;}
-  .grid-container *{box-sizing: border-box;}
-  /* 모양 */
-  .grid-container{
-    background-color: pink;
-    min-height: 600px;
-  }
-  .item{
-    background-color: dodgerblue;
-    border: 1px solid darkblue;
-    aspect-ratio: 1;
-  }
-  /* 갤러리 디자인을 위한 */
-
-  /* grid */
-  .grid-container{
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
-
-    justify-content: start;
-    align-content: center;
-    gap: 10px 10px;
-  }
+    body{margin: 50px;}
+    .grid-container{box-sizing: border-box;}
+    /* 모양 */
+    .grid-container{
+      /* background-color: pink; */
+      max-height: 600px;
+    }
+    .item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+      aspect-ratio: 1;
+    }
+    /* grid */
+    .grid-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+      justify-content: start;
+      align-content: center;
+      gap: 10px 10px;
+    }
   </style>
 </head>
 <body>

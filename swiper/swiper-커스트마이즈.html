@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper</title>
+  <title>swiper 커스트마이즈</title>
   <!-- 1 플러그인 css -->
   <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
 />
+<link rel="stylesheet" href="myswiper-style.css">
 <!-- 2 플러그인 js 설치  -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <style>
   *{margin: 0; padding: 0;}
   body{margin-top: 50px;}
   .myname{
-    width: 60%;
+    width: 400px;
   }
   .swiper-slide img{
+    display: block;
     width: 100%;
     /* height: calc(100vh - 70px); */
     height: auto;
@@ -54,10 +56,10 @@
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  autoplay: {
-  delay: 2500,
-  disableOnInteraction: false,
-  },
+  // autoplay: {
+  // delay: 2500,
+  // disableOnInteraction: false,
+  // },
 
   // If we need pagination
   pagination: {
