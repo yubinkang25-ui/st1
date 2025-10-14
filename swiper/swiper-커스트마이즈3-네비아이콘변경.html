@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper 커스트마이즈3-네비아이콘변경</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="myswiper-style2.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<style>
+  *{margin: 0; padding: 0;}
+  body{margin-top: 50px;}
+  .myname{
+    width: 800px;
+  }
+  .swiper-slide img{
+    display: block;
+    width: 100%;
+    /* height: calc(100vh - 0px); */
+    height: auto;
+    object-fit: cover;
+  }
+  .myname .swiper-button-next,
+  .myname .swiper-button-prev {
+    width: 24px; height: 24px;
+  }
+  .myswiper-nav i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: center/cover no-repeat;
+    border: 1px solid #000;
+  }
+  .myname .swiper-button-prev i.prev{
+    background-image: url(images/arrow_back.png);
+  }
+  .myname .swiper-button-next i.next{
+    background-image: url(images/arrow_forward.png);
+  }
+  .myname .swiper-button-prev:hover i.prev {
+    background-image: url(images/arrow_back_hover.png);
+  }
+  .myname .swiper-button-next:hover i.next{
+    background-image: url(images/arrow_forward_hover.png);
+  }
+</style>
+</head>
+<body>
+  <!-- Slider main container -->
+<div class="swiper myname">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=1"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=2"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=3"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=4"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=5"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=6"></div>
+    ...
+  </div>
+  <div class="myswiper-util">
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="myswiper-nav">
+      <div class="swiper-button-prev">
+        <i class="prev"></i>
+        <!-- <img src="images/arrow_back.png" alt=""> -->
+      </div>
+      <div class="swiper-button-next">
+        <i class="next"></i>
+        <!-- <img src="images/arrow_forward.png" alt=""> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- If we need scrollbar -->
+  <!-- <div class="swiper-scrollbar"></div> -->
+</div>
+<script>
+  const swiper = new Swiper('.myname', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  // autoplay: {
+  // delay: 2500,
+  // disableOnInteraction: false,
+  // },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    // type : 'fraction',
+    type : 'progressbar',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    addIcons: false,
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</body>
+</html>
