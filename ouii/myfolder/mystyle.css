@@ -1,0 +1,94 @@
+/****
+mystyle
+*/
+
+.ec-base-product .prdList {
+ display: flex;
+ flex-wrap: wrap;
+
+ box-sizing: border-box;
+ border: 1px solid #f00;
+}
+.ec-base-product .prdList >li{
+  flex: none;
+  margin: 0 0 70px 0;
+}
+
+.ec-base-product .prdList .prdList__item{
+  margin: 0 10px;
+}
+
+.ec-base-product .prdList__item .thumnail{}
+.ec-base-product .prdList__item .thumnail .prdIcon.ec-produc-bgRT{
+  background-position: calc(100% - 10px) calc(0% + 10px);
+}
+.ec-base-product .prdList__item .thumnail .icon__box{
+  opacity: 0;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 0; right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ec-base-product .prdList>li:hover .prdList__item.thumnail .icon__box{
+  opacity: 1;
+  transition: opacity 0.5s;
+  position: absolute;
+}
+
+  .ec-base-product .prdList .prdList__item .icon__box > span {
+      display: block;
+      position: relative;
+      font-size: 11px;
+      font-weight: 500;
+      color: #000;
+      background-color: transparent;
+      /* border: 1px solid #999; */
+      border-radius: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin: 0 3px;
+
+      min-width: 72px;
+      height: 40px;
+      padding: 10px 15px;
+      font-size: 0;
+      color: transparent;
+      background-color: rgba(255, 255, 255, 0.7);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3FFFFFF,endColorstr=#B3FFFFFF);
+  }
+  .ec-base-product .prdList .prdList__item .icon__box > span:hover,
+  .ec-base-product .prdList .prdList__item .icon__box > span .on{
+    background-color: #fff;
+    border: 1px solid #000;
+    color: currentColor;
+
+
+  }
+  .ec-base-product .prdList .prdList__item .icon__box > span img {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+/* card-border-no-margin */
+.ec-base-product .prdList.card-border-no-margin{
+  border-top: 1px solid currentColor;
+}
+.ec-base-product .prdList .card-border-no-margin .prdList__item{
+  margin: 0;
+  border: 1px solid currentColor;
+}
+.ec-base-product .prdList.card-border-no-margin .prdList__item .description{
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+.ec-base-product .prdList.card-border-no-margin>li{
+  box-sizing: border-box;
+}
+
