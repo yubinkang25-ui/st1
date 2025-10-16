@@ -128,3 +128,44 @@ grid5  :nth-child(5n)
   box-sizing: border-box;
   padding: 0 16px;
 }
+
+.section{border: 1px solid #f00;}
+.content-test{
+  border: 1px solid #00f;
+  min-height: 200px;
+  background-color: #ccc;
+}
+
+.section{
+  --section-bg:#fec;
+}
+
+#contents > .section_full_content_center{
+  background-color: var(--section-bg);
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 1024px) {
+    #contents > .section_full_content_center > div{
+        max-width: 1230px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#contents > .section_full_content_center{
+  background-color: var(--section-bg);
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 1024px) {
+    #contents > .section_full_content_center > div{
+        max-width: 1230px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
