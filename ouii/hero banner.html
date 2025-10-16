@@ -14,7 +14,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <!-- // PG크로스브라우징필수내용 -->
 
-  <title>section 템플릿</title>
+  <title>hero banner</title>
   <link rel="stylesheet" href="">
   <link rel="stylesheet" href="/ouii/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
   <link rel="stylesheet" href="/ouii/layout/basic/css/layout.css">
@@ -30,7 +30,6 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
-  <link rel="stylesheet" href="/ouii/layout/basic/css/main.css">  
 
   <!-- -------------------------------------------- -->
 
@@ -61,6 +60,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Red+Hat+Display:wght@400;500;700&display=swap"
     rel="stylesheet"><!-- theme04 -->
+  <link rel="stylesheet" href="/ouii/layout/basic/css/swiper.min.css">
+  <script src="/ouii/layout/basic/js/swiper-bundle.min.js"></script>
 
   <!--@css(/layout/basic/css/swiper.min.css)-->
   <!--@js(/layout/basic/js/swiper-bundle.min.js)-->
@@ -88,41 +89,39 @@
       <div id="contents">
         <!-- 메인 콘텐츠 영역 -->
         <!--@contents-->
-         <!-- 여기에 테스트 콘텐츠 복사 -->
-        <section class="section" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-18nfow4-1">
-        
-        
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
-          <div class="content test">
-            콘텐츠
-          </div>
-        </section>
-        <section class="section section_full_content_center" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-18nfow4-1">
-        
-        
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
-          <div class="content test">
-            콘텐츠
-          </div>
-        </section>
-        <section class="section section_full_only_content" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-18nfow4-1">
-        
-        
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
-          <div class="content test">
-            콘텐츠
+        <!-- 여기에 테스트 콘텐츠 복사 -->
+        <section class="section visual-section">
+          <div class="swiper visual_swiper">
+                        <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/긴사진1.png" media="(min-width:768px)">
+                  <img src="/ouii/myfolder/images/img1.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/긴사진2.png" media="(min-width:768px)">
+                  <img src="/ouii/myfolder/images/img2.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/긴사진3.png" media="(min-width:768px)">
+                  <img src="/ouii/myfolder/images/img3.png" alt="">
+                </picture>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
           </div>
         </section>
       </div>
@@ -167,6 +166,36 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
+
+  <script>
+    const visual_swiper = new Swiper('.visual_swiper', {
+     
+      direction: 'horizontal',
+      loop: true,
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        // type : 'fraction',
+        // type : 'progressbar',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
 </body>
 
 </html>
