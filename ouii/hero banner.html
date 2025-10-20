@@ -86,44 +86,45 @@
     <!--@import(/layout/basic/header.html)-->
     <!--@import(/layout/basic/sidebar.html)-->
     <div id="container">
-      <div id="contents">
+      <div id="contents" class="ub-style">
         <!-- 메인 콘텐츠 영역 -->
         <!--@contents-->
         <!-- 여기에 테스트 콘텐츠 복사 -->
-        <section class="section visual-section">
-          <div class="swiper visual_swiper">
+        <section class="section visual-section section_full">
+          <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
                         <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/긴사진1.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img1.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img1.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/긴사진1.png" alt="">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/긴사진2.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img2.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img2.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/긴사진2.png" alt="">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source srcset="/ouii/myfolder/images/긴사진3.png" media="(min-width:768px)">
-                  <img src="/ouii/myfolder/images/img3.png" alt="">
+                  <source srcset="/ouii/myfolder/images/img3.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/긴사진3.png" alt="">
                 </picture>
               </div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <div class="ub-swiper-controls">
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </section>
+
       </div>
     </div>
     <!--@import(/layout/basic/footer.html)-->
@@ -169,9 +170,10 @@
 
   <script>
     const visual_swiper = new Swiper('.visual_swiper', {
-     
       direction: 'horizontal',
       loop: true,
+      centeredSlides:true,
+      slidesPerView:'auto',
       // autoplay: {
       //   delay: 2500,
       //   disableOnInteraction: false,
@@ -180,7 +182,7 @@
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
-        // type : 'fraction',
+        type : 'fraction',
         // type : 'progressbar',
       },
 
