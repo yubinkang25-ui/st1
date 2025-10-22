@@ -14,10 +14,8 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <!-- // PG크로스브라우징필수내용 -->
 
-  <title>section템플릿</title>
+  <title>사용자 단처리</title>
   <link rel="stylesheet" href="">
-
-
   <link rel="stylesheet" href="/ouii/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
   <link rel="stylesheet" href="/ouii/layout/basic/css/layout.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-ui.css">
@@ -83,72 +81,31 @@
     <!--@import(/layout/basic/sidebar.html)-->
     <div id="container" data-ez="layout-187eug1-1">
       <div id="contents">
-        <!-- 메인 콘텐츠 영역 -->
-        <!--@contents-->
-        
-        <!-- default -->
-        <section class="section" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-0md2y9r-1">
-  
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
- 
-          <div class="content-test">
-            콘텐츠
-          </div>
+        <section class="section ub-dan">
+          <!-- 사용자 1단처리 -->
+          <!-- 사용자 2단처리 -->
+          <!-- 사용자 3단처리 -->
+           <div class="ub-dan-wrapper">
+            <div class="ub-dan-row row flex-nowrap">
+              <div class="ub-dan-item col-4">아이템1
+                <img src="/myfolder/images/img1-m.png" alt="">
+              </div>
+              <div class="ub-dan-item col-4">아이템2
+                 <img src="/myfolder/images/img2-m.png" alt="">
+              </div>
+              <div class="ub-dan-item col-4">아이템3
+                <img src="/myfolder/images/img3-m.png" alt="">
+              </div>
+            </div>
+           </div>
+          <!-- 사용자 4단처리 -->
         </section>
 
-        <!-- section_full_content_center -->
-       <section class="section section_full_content_center" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-0md2y9r-1">
-  
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
- 
-          <div class="content-test">
-            콘텐츠
-          </div>
-        </section>
-
-        <!--section_full_only_content  -->
-               <section class="section section_full_only_content" data-ez-module="image-gallery/2"
-          data-ez-role="style.background" data-ez-item-length="4" data-ez="contents-0md2y9r-1">
-  
-          <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center"><!-- 온스토리 타이틀 수정하는곳 -->
-            <div class="main_title_txt01" data-ez-role="title">ON STORE!</div>
-            <div class="main_title_txt02" data-ez-role="desc">요즘 가장 핫한 상품 온스토어</div>
-          </div><!-- //main_title -->
- 
-          <div class="content-test">
-            콘텐츠
-          </div>
-        </section>
       </div>
     </div>
     <!--@import(/layout/basic/footer.html)-->
     <!--#ez="1/1"-->
   </div><!-- //wrap -->
-
-  <div id="progressPaybar" style="display:none;">
-    <div id="progressPaybarBackground" class="layerProgress"></div>
-    <div id="progressPaybarView">
-      <div class="box">
-        <h3>현재 결제가 진행중입니다.</h3>
-        <p class="txt">
-          본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br>
-          주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
-        </p>
-        <div class="progressbar"><img src="//img.echosting.cafe24.com/skin/skin/common/img_loading.gif" alt="loading"
-            loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-
-
 
   <div class="layer_shadow" id="layer_shadow"></div>
   <div class="layer_shadow" id="layer_shadow_search"></div>
@@ -160,8 +117,9 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/add_theme03.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css">
 
-  <link rel="stylesheet" href="/ouii/myfolder/mystyle.css">
-
+  <link rel="stylesheet" href="/myfolder/mystyle.css">
+  
+  <script src="/myfolder/js/myscript.js"></script>
   <!-- ---------------------------------- -->
   <!--@css(/layout/basic/css/sub_style.css)-->
   <!--@css(/layout/basic/css/sub_theme.css)-->
