@@ -4,6 +4,11 @@
 :root {
   /* 색상 */
   --primary-color:#1f1f1f;
+  --ub-font-base-color: #000;
+  --ub-font-title-color:#000;
+  --ub-font-title-txt02-color:#ccc;
+  --ub-tab-button-default:#999;
+  --ub-tab-button-active:#000;
   /* 간격 변수 */
   --space-xs: 8px;
   --space-sm: 10px;
@@ -18,10 +23,18 @@
   --dan-space: 15px;
   
   /* 반응형 breakpoint */
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 767px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --breakpoint-xl: 1300px;
+  --breakpoint-xxl: 1533px;
+
+  /* section관련 변수 선언 */
+  --section-bg: beige;
+  --section-padding-top-bottom:40px;
+  --section-main-banner-padding:16px;
+
 }
 
+  
 
