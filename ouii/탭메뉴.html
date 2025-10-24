@@ -15,8 +15,10 @@
   <!-- // PG크로스브라우징필수내용 -->
 
   <title>탭메뉴 연습</title>
+  <!--제이쿼리를 꼭 넣어줘야지 작동 된다-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="">
   <link rel="stylesheet" href="/ouii/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
   <link rel="stylesheet" href="/ouii/layout/basic/css/layout.css">
@@ -32,6 +34,8 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
+
+  <link rel="stylesheet" href="/ouii/layout/basic/css/main.css">
 
   <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
   <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
@@ -95,8 +99,8 @@
 
 
         <!-- 여기에 테스트 콘텐츠 복사 -->
-        <section class="section main_product_category tab-horizontal" data-ez-module="product-list-category/2" data-ez-layout="grid4"
-          data-ez="contents-1e1ocjz-1">
+        <section class="section main_product_category tab-center" 
+        data-ez-module="product-list-category/2" data-ez-layout="grid4" data-ez="contents-1e1ocjz-1">
 
           <div class="main_product_inner">
             <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center">
@@ -112,7 +116,11 @@
                   data-name="목걸이 명찰">목걸이 명찰</button></li>
               <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
                   data-name="원형명찰">원형명찰</button></li>
-
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent2" data-ez-role="name"
+                  data-name="목걸이 명찰">목걸이 명찰</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
+                  data-name="원형명찰">원형명찰</button></li>
+        
             </ul><!-- //main_product_tab -->
           </div><!-- //main_product_inner -->
 
@@ -165,6 +173,22 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
-</body>
 
+ <script>
+  // 탭메뉴 테스를 위한 스크립트 복사
+jQuery(document).ready(function () {
+  /* 메인 탭카테고리 */
+	jQuery(".main_product_tab li").bind("click", function () {
+		jQuery(this).parent().find('li button').removeClass("active");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent').removeClass("active");
+		jQuery('button', this).addClass("active");
+		var activeTab = jQuery('button', this).attr("data-id");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent' + '#' + activeTab).addClass("active");
+	});
+	jQuery('.main_product_category .main_product_inner .main_product_tab li button, .content_list .tabcontent').removeClass('active'); // 나머지 탭 숨김
+	jQuery('.main_product_category .main_product_inner .main_product_tab li:first-child button, .content_list .tabcontent:first-child').addClass('active'); // 첫번째 탭 오픈
+});
+ </script>
+
+</body>
 </html>
