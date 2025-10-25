@@ -13,6 +13,9 @@
     <!-- // PG크로스브라우징필수내용 -->
 
     <title>오우이템플릿</title>
+		 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" href="">
     <link rel="stylesheet" href="/오우이/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
     <link rel="stylesheet" href="/오우이/layout/basic/css/layout.css">
@@ -45,6 +48,7 @@
     <!--@css(/layout/basic/css/ec-base-product.css)-->
   	<!--@css(/layout/basic/css/ec-base-prdInfo.css)-->
     <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+		
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -75,51 +79,17 @@
 <div id="container">
 		<div id="contents">
 				<!--@contents-->
+				<!-- 여기에 테스트 콘텐츠 복사 -->
+
+
+
+
+
 			</div>
 </div>
 <!--@import(/layout/basic/footer.html)-->
 <!--#ez="1/1"-->
 </div><!-- //wrap -->
-
-	<div id="progressPaybar" style="display:none;">
-		<div id="progressPaybarBackground" class="layerProgress"></div>
-		<div id="progressPaybarView">
-			<div class="box">
-				<h3>현재 결제가 진행중입니다.</h3>
-				<p class="txt">
-					본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br>
-					주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
-				</p>
-				<div class="progressbar"><img src="//img.echosting.cafe24.com/skin/skin/common/img_loading.gif" alt="loading" loading="lazy"></div>
-			</div>
-		</div>
-	</div>
-
-	<div module="Layout_multishopShipping">
-		<!--@css(/layout/basic/css/ec-base-layer.css)-->
-		<!--@css(/css/module/layout/multishopShipping.css)-->
-		<!--@js(/js/module/layout/multishopShipping.js)-->
-		<div class="worldshipLayer ec-base-layer typeModal">
-			<div class="header">
-				<h3>WORLD SHIPPING</h3>
-			</div>
-			<div class="content">
-				<p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
-				<select module="Layout_multishopShippingCountrylist">
-					<option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
-					<option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
-				</select>
-				<select module="Layout_multishopShippingLanguagelist">
-					<option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
-					<option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
-				</select>
-			</div>
-			<div class="ec-base-button">
-				<a href="#none" class="btnSubmitFix sizeM">GO</a>
-			</div>
-			<a href="#none" class="btnClose">닫기</a>
-		</div>
-	</div>
 
 	<div class="layer_shadow" id="layer_shadow"></div>
 	<div id="layoutDimmed" class="dimmed"></div>
@@ -131,7 +101,7 @@
 	<link rel="stylesheet" href="/오우이/layout/basic/css/add_theme03.css">
 	<link rel="stylesheet" href="/오우이/layout/basic/css/add_layout.css">
 
-	<link rel="stylesheet" href="/">
+	<link rel="stylesheet" href="/메이크잇/yubin.css">
 
 	<!-- ---------------------------------------- -->
 
