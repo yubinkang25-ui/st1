@@ -18,7 +18,7 @@
 /* 섹션 너비 제한용 */
 .section {
   width: var(--section-width);
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 /* 12컬럼 그리드 */
