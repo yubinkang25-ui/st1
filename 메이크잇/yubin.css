@@ -238,7 +238,24 @@ swiper controls가 슬라이드 아래 표시
         margin-right: auto;
     }
 }
+#contents > .section_full_only_content{
+  background-color: var(--section-bg);
+  width: 100%;
+  max-width: none;
+  padding-top: var(--section-padding-top-bottom);
+  padding-bottom: var(--section-padding-top-bottom);
+}
 
+
+
+@media (min-width: 1024px) {
+    #contents > .section_full_only_content > .main_title{
+        max-width: 1230px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 /**************
 단처리 태블릿 이하 스크롤
 .ub-dan-row.md-scroll
@@ -607,3 +624,51 @@ content_list
   margin-bottom: var(--space-md);
  }
 }/*@media (max-width:767px){*/
+
+/* 유투브 글자 간격 조정 */
+
+.main_title .main_title_txt03{
+  font-size: calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));
+  font-weight: 700;
+  line-height: 1;
+  color: #3a3a3a;
+}
+.main_title .main_title_txt04{
+  font-size: calc(13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)));
+  font-weight: 400;
+  line-height: 1;
+  color: #9a9a9a;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* ==================================================================
+  맨 위로 가기 (TOP 버튼)
+================================================================== */
+#btnTop {
+  position: fixed;   /* 1. 화면에 위치 고정 */
+  bottom: var(--space-md);    /* 2. 화면 아래쪽에서 30px */
+  right: var(--space-md);       /* 3. 화면 오른쪽에서 30px */
+  
+  width: 45px;       /* 버튼 크기 */
+  height: 45px;      /* 버튼 크기 */
+  background: #333;  /* 배경색 (사이트 디자인에 맞게 수정) */
+  color: #fff;        /* 화살표 색상 */
+  
+  border-radius: 50%; /* 버튼을 동그랗게 */
+  text-align: center; /* 화살표 가로 중앙 */
+  line-height: 45px;  /* 화살표 세로 중앙 (height와 동일하게) */
+  
+  font-size: 30px;     /* 화살표 크기 */
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;        /* 다른 요소들보다 위에 보이도록 */
+  
+  display: none;       /* 4. 평소에는 숨겨둠 (중요!) */
+  opacity: 0.8;
+}
+
+/* 마우스를 올렸을 때 살짝 투명도 조절 */
+#btnTop:hover {
+  opacity: 1;
+}
