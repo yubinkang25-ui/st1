@@ -16,31 +16,36 @@
 visual-swiper
 hero section용
 */
-.visual-section{
-  --visual-swiper-width:100%;
+.visual-section {
+  --visual-swiper-width: 100%;
 }
+
 /* @media (min-width: 1024px) {
     #contents.ub-style .visual-section  {
         max-width: none;
         width: 100%;
     }
 } */
- /* html에서 #contents class="ub-style" */
+/* html에서 #contents class="ub-style" */
 @media (max-width: 1024px) {
-   #container #contents.ub-style  {
-        max-width: none;
-        width: 100%;
-    }
+  #container #contents.ub-style {
+    max-width: none;
+    width: 100%;
+  }
 }
-.visual-section .visual_swiper{
+
+.visual-section .visual_swiper {
   width: var(--visual-swiper-width);
 }
-.visual-section .swiper .swiper-slide{}
-.visual-section .swiper-slide picture{
+
+.visual-section .swiper .swiper-slide {}
+
+.visual-section .swiper-slide picture {
   display: block;
 }
+
 .visual-section .swiper-slide picture source,
-.visual-section .swiper-slide picture img{
+.visual-section .swiper-slide picture img {
   display: block;
   width: 100%;
   height: auto;
@@ -52,118 +57,133 @@ ub-swiper
 1. navigation 이미지 변경
 2. pagination 색상변경
  */
- .ub-swiper .swiper-button-prev,
- .ub-swiper .swiper-button-next{
-  width:60px; height: 60px;
-  background-size: contain;
- }
-.ub-swiper .swiper-button-prev{
-    background-image: url(/메이크잇/이미지/arrow_back_.svg);
-   background-position: center;
-    left: 20px;
-    right: auto;
-}
+.ub-swiper .swiper-button-prev,
 .ub-swiper .swiper-button-next {
-    background-image: url(/메이크잇/이미지/arrow_forward.svg);
-    background-position: center;
-    left: auto;
-    right: 20px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
 }
-.ub-swiper .swiper-pagination{
-  left:0;
-  bottom:1rem;
+
+.ub-swiper .swiper-button-prev {
+  background-image: url(/메이크잇/이미지/arrow_back_.svg);
+  background-position: center;
+  left: 20px;
+  right: auto;
+}
+
+.ub-swiper .swiper-button-next {
+  background-image: url(/메이크잇/이미지/arrow_forward.svg);
+  background-position: center;
+  left: auto;
+  right: 20px;
+}
+
+.ub-swiper .swiper-pagination {
+  left: 0;
+  bottom: 1rem;
   width: 100%;
 }
-.ub-swiper .swiper-pagination-bullet{
+
+.ub-swiper .swiper-pagination-bullet {
   vertical-align: middle;
-  margin-right:10px;
+  margin-right: 10px;
 }
+
 .ub-swiper .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: transparent;
-    border:4px solid var(--primary-color);
+  opacity: 1;
+  background: transparent;
+  border: 4px solid var(--primary-color);
 }
 
 /*******
 swiper controls가 슬라이드 아래 표시
  */
-.ub-swiper.ub-swiper-controls-bottom{
-  width:80%;
-  margin:0 auto;
+.ub-swiper.ub-swiper-controls-bottom {
+  width: 80%;
+  margin: 0 auto;
 }
-.ub-swiper.ub-swiper-controls-bottom .swiper-wrapper{
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-wrapper {
   /*하단에 정렬*/
   /* align-items: end;   */
 
   /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
-  align-items: center;  
+  align-items: center;
 
 }
-.ub-swiper.ub-swiper-controls-bottom .swiper-slide{
-  width:100% !important;
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide {
+  width: 100% !important;
   transform: scale(0.9);
   /*슬라이드를 하단에 정렬할 때는 transform-origin*/
   /* transform-origin: center bottom;  */
 
-   /*슬라이드를 가운데에 정렬할 때는 transform-origin*/
-  transform-origin: center center; 
+  /*슬라이드를 가운데에 정렬할 때는 transform-origin*/
+  transform-origin: center center;
 }
-.ub-swiper.ub-swiper-controls-bottom .swiper-slide-active{
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide-active {
   transform: scale(1);
 }
-.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls{
+
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:2rem;
+  gap: 2rem;
   box-sizing: border-box;
-  padding:0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 /* flex item */
-.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls>div{
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls>div {
   position: static;
   box-sizing: border-box;
-  
+
 }
-.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-scrollbar{
-  order:1;
+
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-scrollbar {
+  order: 1;
   width: 100%;
   height: 4px;
 }
+
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-fraction {
-  order:2;
+  order: 2;
   width: auto;
 
   display: flex;
-  gap:0.5rem;
+  gap: 0.5rem;
   font-size: 1rem;
 }
+
 .ub-swiper.ub-swiper-controls-bottom .swiper-button-next,
-.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
-  width:24px; height: 24px;
-  margin-top:0;
-}
-.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
-  order:3;
-  background-position:4px center;
-  margin-left:30px;
- 
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev {
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
 }
 
-.ub-swiper.ub-swiper-controls-bottom .swiper-button-next{
-   order:5;
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev {
+  order: 3;
+  background-position: 4px center;
+  margin-left: 30px;
+
+}
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-next {
+  order: 5;
   /* margin-left: -1.2rem; */
 }
-  
-  /* progressbar와 fraction을 함께 쓰는 방법 */
+
+/* progressbar와 fraction을 함께 쓰는 방법 */
 
 /* progressbar 스타일링 */
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar {
   width: 100%;
   max-width: 85%;
   height: 4px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
@@ -172,73 +192,79 @@ swiper controls가 슬라이드 아래 표시
 
 /* 별도로 현재 페이지 번호 표시 */
 .ub-swiper.ub-swiper-controls-bottom .custom-fraction {
-  order:4;
+  order: 4;
   font-size: 1rem;
   white-space: nowrap;
 }
 
 /* 자동 재생 토글 버튼 스타일링 */
-.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle{
-  order:6;
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle {
+  order: 6;
   width: auto;
   height: auto;
   background: transparent;
   border: none;
   cursor: pointer;
 }
+
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play,
-.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
-  display: inline-block ;
-  width: 24px; height: 24px;
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
   overflow: hidden;
   text-indent: -9999px;
   background: center/contain no-repeat;
 }
 
-.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play{
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play {
   background-image: url(/메이크잇/이미지/play_arrow.png);
 }
-.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
+
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause {
   background-image: url(/메이크잇/이미지/pause.png);
 }
+
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play.hidden,
-.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause.hidden{
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause.hidden {
   display: none;
 }
 
 /*section_full_content_center*/
 
 /* .section{border: 1px solid #f00;} */
-.content-test{
+.content-test {
   /* border: 1px solid #00f; */
   min-height: 200px;
   background-color: #ccc;
 }
 
-#contents > .section_full_content_center{
+#contents>.section_full_content_center {
   background-color: var(--section-bg);
   width: 100%;
   max-width: none;
   padding-top: var(--section-padding-top-bottom);
   padding-bottom: var(--section-padding-top-bottom);
 }
-#contents > .section_full_content_center .main_3dan_banner .main_banner_txt{
+
+#contents>.section_full_content_center .main_3dan_banner .main_banner_txt {
   margin-top: 0;
-  padding:16px;
+  padding: 16px;
   background-color: #fff;
   padding: var(--section-main-banner-padding);
   box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
-    #contents > .section_full_content_center > div{
-        max-width: 1230px;
-        width: 92%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  #contents>.section_full_content_center>div {
+    max-width: 1230px;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-#contents > .section_full_only_content{
+
+#contents>.section_full_only_content {
   background-color: var(--section-bg);
   width: 100%;
   max-width: none;
@@ -249,152 +275,153 @@ swiper controls가 슬라이드 아래 표시
 
 
 @media (min-width: 1024px) {
-    #contents > .section_full_only_content > .main_title{
-        max-width: 1230px;
-        width: 92%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  #contents>.section_full_only_content>.main_title {
+    max-width: 1230px;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 /**************
 단처리 태블릿 이하 스크롤
 .ub-dan-row.md-scroll
 */
-@media (max-width:1024px){
-.ub-dan-row.md-scroll {
-  /* scroll */
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  overflow-x: auto;
+@media (max-width:1024px) {
+  .ub-dan-row.md-scroll {
+    /* scroll */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
 
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width:100% !important;
-  justify-content: start;
-}
-.ub-dan-row.md-scroll .ub-dan-item{
-  /* scroll */
-   scroll-snap-align: center;
-   width: 85%;
-   max-width:50vw;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100% !important;
+    justify-content: start;
+  }
 
-   /* 요소 크기가 늘지도 줄지 말고 지정된 width값을 따라라 */
-   flex: none;
+  .ub-dan-row.md-scroll .ub-dan-item {
+    /* scroll */
+    scroll-snap-align: center;
+    width: 85%;
+    max-width: 50vw;
+
+    /* 요소 크기가 늘지도 줄지 말고 지정된 width값을 따라라 */
+    flex: none;
+  }
 }
-}
-@media (max-width:480px){
-  .ub-dan-row.md-scroll .ub-dan-item{
+
+@media (max-width:480px) {
+  .ub-dan-row.md-scroll .ub-dan-item {
     max-width: 100%;
   }
 }
 
 /* 탭메뉴 */
-.main_product_category{
-  margin:100px auto;
-}
-.main_product_category .main_product_tab{
-   display: flex;
-   margin-bottom:0;
+.main_product_category {
+  margin: 100px auto;
 }
 
-.main_product_category  .main_product_tab li{
-    margin:0 var(--space-xs);
-  padding:0 var(--space-xs);
+.main_product_category .main_product_tab {
+  display: flex;
+  margin-bottom: 0;
 }
-.main_product_category  .main_product_tab li .button{
+
+.main_product_category .main_product_tab li {
+  margin: 0 var(--space-xs);
+  padding: 0 var(--space-xs);
+}
+
+.main_product_category .main_product_tab li .button {
   position: relative;
-  font-size:calc(
-   13px + (18 - 13) * ((100vw - 370px) / (1760 - 370))
-  );
-  
+  font-size: calc(13px + (18 - 13) * ((100vw - 370px) / (1760 - 370)));
+
   line-height: 1.6;
-  color:var(--ub-tab-button-default);
+  color: var(--ub-tab-button-default);
 }
 
-.main_product_category .main_product_tab li .button::after{
-  content:"";
+.main_product_category .main_product_tab li .button::after {
+  content: "";
   position: absolute;
-  bottom:0px;
-  left:0;
+  bottom: 0px;
+  left: 0;
   width: 100%;
   height: 2px;
   background-color: var(--ub-tab-button-default);
   transform: scale(0);
-  transform-origin: right center ;
-  transition:transform 0.2s ease-in;
+  transform-origin: right center;
+  transition: transform 0.2s ease-in;
 }
-.main_product_category .main_product_tab li .button.active::after{
-  transform:scale(100%);
-  transform-origin: left center ;
+
+.main_product_category .main_product_tab li .button.active::after {
+  transform: scale(100%);
+  transform-origin: left center;
   transition: transform 0.3s ease-in;
 }
 
 /* 
 탭버튼 중앙정렬 .section.tab-center
 */
-.section.tab-center  .main_product_inner{
+.section.tab-center .main_product_inner {
   margin-bottom: var(--space-md);
 }
 
 /* .main_title */
-.section.tab-center .main_title{
+.section.tab-center .main_title {
   text-align: center;
-  margin-bottom:var(--space-xl);
+  margin-bottom: var(--space-xl);
 }
 
-.section.tab-center .main_title .main_title_txt01{
-  font-size:calc(
-   18px + (30 - 18) * ((100vw - 370px) / (1760 - 370))
-  );
+.section.tab-center .main_title .main_title_txt01 {
+  font-size: calc(18px + (30 - 18) * ((100vw - 370px) / (1760 - 370)));
   font-weight: 700;
   line-height: 1;
   color: var(--ub-font-title-color);
 }
-.section.tab-center .main_title .main_title_txt02{
-  font-size:calc(
-   13px + (20 - 13) * ((100vw - 370px) / (1760 - 370))
-  );
+
+.section.tab-center .main_title .main_title_txt02 {
+  font-size: calc(13px + (20 - 13) * ((100vw - 370px) / (1760 - 370)));
   line-height: 1;
   color: var(--ub-font-title-txt02-color);
-  margin-top:15px;
+  margin-top: 15px;
 
 }
 
 /* 탭메뉴 */
-.section.tab-center .main_product_tab{
+.section.tab-center .main_product_tab {
   display: flex;
   justify-content: center;
 
-  width:100%;
+  width: 100%;
 
 }
-.section.tab-center .main_product_tab li{
-  margin:0 var(--space-xs);
-  padding:0 var(--space-xs);
-   /* border: 1px solid #000;
+
+.section.tab-center .main_product_tab li {
+  margin: 0 var(--space-xs);
+  padding: 0 var(--space-xs);
+  /* border: 1px solid #000;
   background-color: #efefef; */
 }
-.section.tab-center .main_product_tab li button{
+
+.section.tab-center .main_product_tab li button {
   position: relative;
-  font-size:calc(
-   13px + (18 - 13) * ((100vw - 370px) / (1760 - 370))
-  );
-  
+  font-size: calc(13px + (18 - 13) * ((100vw - 370px) / (1760 - 370)));
+
   line-height: 1.6;
-  color:var(--ub-tab-button-default);
- 
+  color: var(--ub-tab-button-default);
+
 }
 
 
-.section.tab-center .main_product_tab li button.active{
-  color:var(--ub-tab-button-active);
+.section.tab-center .main_product_tab li button.active {
+  color: var(--ub-tab-button-active);
 }
 
-.section.tab-center .main_product_tab li button.active::after{
-  content:"";
+.section.tab-center .main_product_tab li button.active::after {
+  content: "";
   position: absolute;
-  bottom:0px;
-  left:0;
+  bottom: 0px;
+  left: 0;
   width: 100%;
   height: 2px;
   background-color: var(--ub-tab-button-active);
@@ -404,39 +431,41 @@ swiper controls가 슬라이드 아래 표시
 수평 탭버튼 section.tab-horizontal
 main_title main_product_tab 수평으로 배치
 */
-.section.tab-horizontal .main_product_inner{
+.section.tab-horizontal .main_product_inner {
   display: flex;
   justify-content: space-between;
   align-items: end;
   margin-bottom: var(--space-md);
 }
 
-.section.tab-horizontal .main_title{
-    text-align: left;  margin-bottom: 0;     flex:1 1 auto
+.section.tab-horizontal .main_title {
+  text-align: left;
+  margin-bottom: 0;
+  flex: 1 1 auto
 }
 
-.section.tab-horizontal .main_title .main_title_txt01{
-  font-size:calc(
-   18px + (24 - 18) * ((100vw - 370px) / (1760 - 370))
-  );
-}
-.section.tab-horizontal .main_title .main_title_txt02{
-  font-size:calc(
-   13px + (16 - 13) * ((100vw - 370px) / (1760 - 370))
-  );
-}
-.section.tab-horizontal  .main_product_tab{
-  justify-content: end;   width: auto;
-}
-.section.tab-horizontal .main_product_tab li .button.active{
-  color:var(--ub-tab-button-active);
+.section.tab-horizontal .main_title .main_title_txt01 {
+  font-size: calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));
 }
 
-.section.tab-horizontal .main_product_tab li .button.active::after{
-  content:"";
+.section.tab-horizontal .main_title .main_title_txt02 {
+  font-size: calc(13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)));
+}
+
+.section.tab-horizontal .main_product_tab {
+  justify-content: end;
+  width: auto;
+}
+
+.section.tab-horizontal .main_product_tab li .button.active {
+  color: var(--ub-tab-button-active);
+}
+
+.section.tab-horizontal .main_product_tab li .button.active::after {
+  content: "";
   position: absolute;
-  bottom:-6px;
-  left:0;
+  bottom: -6px;
+  left: 0;
   width: 100%;
   height: 2px;
   background-color: var(--ub-tab-button-active);
@@ -450,65 +479,67 @@ main_title main_product_tab 수평으로 배치
   /* flex-direction: row;
   justify-content: start; */
 }
-.section.tab-vertical .main_product_inner{
+
+.section.tab-vertical .main_product_inner {
   /* flex:0 1 auto; */
-  width:16%;
+  width: 16%;
   margin-right: 2%;
 
 }
-.section.tab-vertical .main_title{
-    text-align: left;  margin-bottom: 0;     flex:1 1 auto;
-    margin-bottom: var(--space-lg);
+
+.section.tab-vertical .main_title {
+  text-align: left;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  margin-bottom: var(--space-lg);
 }
 
-.section.tab-vertical .main_title .main_title_txt01{
-  font-size:calc(
-   18px + (24 - 18) * ((100vw - 370px) / (1760 - 370))
-  );
+.section.tab-vertical .main_title .main_title_txt01 {
+  font-size: calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));
   font-weight: 500;
 }
 
-.section.tab-vertical .main_title .main_title_txt02{
-  font-size:calc(
-   13px + (16 - 13) * ((100vw - 370px) / (1760 - 370))
-  );
+.section.tab-vertical .main_title .main_title_txt02 {
+  font-size: calc(13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)));
 }
 
-.section.tab-vertical .main_product_tab{
+.section.tab-vertical .main_product_tab {
   display: flex;
   flex-direction: column;
   justify-content: start;
 }
 
-.section.tab-vertical .main_product_tab >li {
-  margin:0;
-  padding:var(--space-sm) var(--space-md);
+.section.tab-vertical .main_product_tab>li {
+  margin: 0;
+  padding: var(--space-sm) var(--space-md);
   margin-bottom: var(--space-md);
   /* background-color: #efefef; */
 }
 
-.section.tab-vertical .main_product_tab li button.active{
-  color:var(--ub-tab-button-active);
+.section.tab-vertical .main_product_tab li button.active {
+  color: var(--ub-tab-button-active);
 }
 
-.section.tab-vertical .main_product_tab li button.active::after{
-  content:"";
+.section.tab-vertical .main_product_tab li button.active::after {
+  content: "";
   position: absolute;
-  bottom:0px;
-  left:0;
+  bottom: 0px;
+  left: 0;
   width: 100%;
   height: 2px;
   background-color: var(--ub-tab-button-active);
 }
+
 /* li에 배경을 넣는 다면  content:none
 li에 배경을 넣지 않으면 content:none을 코멘트처리
 */
-.section.tab-vertical .main_product_tab >li button::after,
-.section.tab-vertical .main_product_tab >li button.active::after{
+.section.tab-vertical .main_product_tab>li button::after,
+.section.tab-vertical .main_product_tab>li button.active::after {
   /* content: none; */
 }
-.section.tab-vertical .content_list{
-  width:82%;
+
+.section.tab-vertical .content_list {
+  width: 82%;
 }
 
 
@@ -516,15 +547,16 @@ li에 배경을 넣지 않으면 content:none을 코멘트처리
 탭콘텐츠
 content_list
 */
-.tabcontent{
+.tabcontent {
   width: 100%;
   min-height: 400px;
-  }
-
-.section.main_product_category  .content_list .tabcontent{
-   display: none;
 }
-.section.main_product_category .content_list .tabcontent.active{
+
+.section.main_product_category .content_list .tabcontent {
+  display: none;
+}
+
+.section.main_product_category .content_list .tabcontent.active {
   display: block;
 }
 
@@ -534,106 +566,125 @@ content_list
 /* 
 .section.tab-center
  */
-@media (max-width:1024px){
-.section.tab-center  .main_product_inner{
+@media (max-width:1024px) {
+  .section.tab-center .main_product_inner {
     margin-bottom: var(--space-sm);
-}
-.section.tab-center .main_title{
-    margin-bottom:var(--space-lg);
-}
-.section.tab-center .main_product_tab{
-  overflow-x: auto;
+  }
+
+  .section.tab-center .main_title {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section.tab-center .main_product_tab {
+    overflow-x: auto;
+  }
+
 }
 
-}/* @media (max-width:1024px){ */
+/* @media (max-width:1024px){ */
 
-@media (max-width:767px){
-.section.tab-center .main_product_tab{
-  justify-content: start;
+@media (max-width:767px) {
+  .section.tab-center .main_product_tab {
+    justify-content: start;
+  }
+
 }
 
-}/*@media (max-width:1024px){*/
+/*@media (max-width:1024px){*/
 
 
 /* 
 .section.tab-horizontal
 */
-@media (max-width:1024px){
-  .section.tab-horizontal .main_product_inner{
+@media (max-width:1024px) {
+  .section.tab-horizontal .main_product_inner {
     flex-direction: column;
     justify-content: start;
     align-items: start;
   }
 
- .section.tab-horizontal .main_title{
-  margin-bottom: var(--space-lg);
- }
- 
-.section.tab-horizontal  .main_product_tab{
-  justify-content:start; 
-  margin-left:0; 
-  overflow-x: auto; 
-  width: 100%;
+  .section.tab-horizontal .main_title {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section.tab-horizontal .main_product_tab {
+    justify-content: start;
+    margin-left: 0;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .section.tab-horizontal .main_product_tab li:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
 }
 
-.section.tab-horizontal  .main_product_tab li:first-child{
-  margin-left:0;
-  padding-left: 0;
+/*@media (max-width:1024px){*/
+
+@media (max-width:767px) {
+  .section.tab-horizontal .main_title {
+    margin-bottom: var(--space-md);
+  }
+
 }
 
-}/*@media (max-width:1024px){*/
-
-@media (max-width:767px){
-.section.tab-horizontal .main_title{
-  margin-bottom: var(--space-md);
- }
-
-}/*@media (max-width:767px){*/
+/*@media (max-width:767px){*/
 
 /* 
 .section.tab-vertical
 */
-@media (max-width:1024px){
-.section.tab-vertical {
-  flex-direction: column;
-}
-.section.tab-vertical .main_product_inner{
-  width:auto;
-  margin-right: 0;
+@media (max-width:1024px) {
+  .section.tab-vertical {
+    flex-direction: column;
+  }
 
-}
-.section.tab-vertical .main_product_tab{
-  flex-direction: row;
-  overflow-x: auto;
-}
-.section.tab-vertical .main_product_tab >li{
-  margin-bottom: 0;
-}
-.section.tab-vertical .main_product_tab >li:first-child {
-  margin-left:0;
-  padding-left: 0;
+  .section.tab-vertical .main_product_inner {
+    width: auto;
+    margin-right: 0;
+
+  }
+
+  .section.tab-vertical .main_product_tab {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .section.tab-vertical .main_product_tab>li {
+    margin-bottom: 0;
+  }
+
+  .section.tab-vertical .main_product_tab>li:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .section.tab-vertical .content_list {
+    width: 100%;
+  }
 }
 
-.section.tab-vertical .content_list{
-  width:100%;
-}
-}/*@media (max-width:1024px){*/
+/*@media (max-width:1024px){*/
 
-@media (max-width:767px){
-.section.tab-vertical .main_title{
-  margin-bottom: var(--space-md);
- }
-}/*@media (max-width:767px){*/
+@media (max-width:767px) {
+  .section.tab-vertical .main_title {
+    margin-bottom: var(--space-md);
+  }
+}
+
+/*@media (max-width:767px){*/
 
 /* 유투브 글자 간격 조정 */
 
-.main_title .main_title_txt03{
+.main_title .main_title_txt03 {
   font-size: calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));
   font-weight: 700;
   line-height: 1;
   color: #3a3a3a;
 }
-.main_title .main_title_txt04{
+
+.main_title .main_title_txt04 {
   font-size: calc(13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)));
   font-weight: 400;
   line-height: 1;
@@ -646,25 +697,38 @@ content_list
   맨 위로 가기 (TOP 버튼)
 ================================================================== */
 #btnTop {
-  position: fixed;   /* 1. 화면에 위치 고정 */
-  bottom: var(--space-md);    /* 2. 화면 아래쪽에서 30px */
-  right: var(--space-md);       /* 3. 화면 오른쪽에서 30px */
-  
-  width: 45px;       /* 버튼 크기 */
-  height: 45px;      /* 버튼 크기 */
-  background: #333;  /* 배경색 (사이트 디자인에 맞게 수정) */
-  color: #fff;        /* 화살표 색상 */
-  
-  border-radius: 50%; /* 버튼을 동그랗게 */
-  text-align: center; /* 화살표 가로 중앙 */
-  line-height: 45px;  /* 화살표 세로 중앙 (height와 동일하게) */
-  
-  font-size: 30px;     /* 화살표 크기 */
+  position: fixed;
+  /* 1. 화면에 위치 고정 */
+  bottom: var(--space-md);
+  /* 2. 화면 아래쪽에서 30px */
+  right: var(--space-md);
+  /* 3. 화면 오른쪽에서 30px */
+
+  width: 45px;
+  /* 버튼 크기 */
+  height: 45px;
+  /* 버튼 크기 */
+  background: #333;
+  /* 배경색 (사이트 디자인에 맞게 수정) */
+  color: #fff;
+  /* 화살표 색상 */
+
+  border-radius: 50%;
+  /* 버튼을 동그랗게 */
+  text-align: center;
+  /* 화살표 가로 중앙 */
+  line-height: 45px;
+  /* 화살표 세로 중앙 (height와 동일하게) */
+
+  font-size: 30px;
+  /* 화살표 크기 */
   font-weight: bold;
   text-decoration: none;
-  z-index: 999;        /* 다른 요소들보다 위에 보이도록 */
-  
-  display: none;       /* 4. 평소에는 숨겨둠 (중요!) */
+  z-index: 999;
+  /* 다른 요소들보다 위에 보이도록 */
+
+  display: none;
+  /* 4. 평소에는 숨겨둠 (중요!) */
   opacity: 0.8;
 }
 
@@ -675,6 +739,15 @@ content_list
 
 @media (max-width: 767.98px) {
   #btnTop {
-    display: none !important; /* 요소를 화면에서 완전히 숨김 */
+    display: none !important;
+    /* 요소를 화면에서 완전히 숨김 */
   }
+}
+
+/*************
+tab-vertical.tab-slides
+*/
+
+.tab-slides .ec-base-product .prdList.swiper-wrapper {
+  flex-wrap: nowrap;
 }
