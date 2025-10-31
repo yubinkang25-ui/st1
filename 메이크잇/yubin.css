@@ -672,3 +672,9 @@ content_list
 #btnTop:hover {
   opacity: 1;
 }
+
+@media (max-width: 767.98px) {
+  #btnTop {
+    display: none !important; /* 요소를 화면에서 완전히 숨김 */
+  }
+}
