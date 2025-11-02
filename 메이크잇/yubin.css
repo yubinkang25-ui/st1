@@ -5,12 +5,12 @@
 /*******
 변수 variables
 *******/
-@import url(/메이크잇/css/ub-variables.css);
+/* @import url(/메이크잇/css/ub-variables.css); */
 
 /*******
 그리드 시스템
 *******/
-@import url(/메이크잇/css/ub-grid-system.css);
+/* @import url(/메이크잇/css/ub-grid-system.css); */
 
 /*********
 visual-swiper
@@ -261,7 +261,8 @@ swiper controls가 슬라이드 아래 표시
     width: 92%;
     margin-left: auto;
     margin-right: auto;
-  }
+    }
+  
 }
 
 #contents>.section_full_only_content {
@@ -750,4 +751,166 @@ tab-vertical.tab-slides
 
 .tab-slides .ec-base-product .prdList.swiper-wrapper {
   flex-wrap: nowrap;
+}
+
+/* ====== 맞춤 퀵 네비게이션 스타일 ====== */
+.custom-quick-nav {
+  width: 100%;
+  overflow-x: auto;  /* 핵심: 가로 스크롤 생성 */
+  overflow-y: hidden;
+  white-space: nowrap; /* 항목들이 한 줄로 이어지도록 함 */
+  padding: 10px 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;  /* 스크롤바 숨김 (IE, Edge) */
+  scrollbar-width: none;     /* 스크롤바 숨김 (Firefox) */
+  }
+
+/* 스크롤바 숨김 (Chrome, Safari) */
+.custom-quick-nav::-webkit-scrollbar {
+  display: none; 
+}
+
+.custom-quick-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 16px; /* 좌우 끝 여백 */
+  display: table;
+}
+
+.custom-quick-nav li {
+  display: inline-block;
+  margin-right: 30px; /* 항목 사이 간격 */
+}
+
+.custom-quick-nav li:last-child {
+  margin-right: 0;
+}
+
+.custom-quick-nav li a {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 6px 14px 6px 8px; /* 안쪽 여백 */
+  /* 배경색: 흰색 */
+  border: 1px solid var(--section-bg); /* 테두리 */
+  border-radius: 50px;     /* 알약 모양 */
+  text-decoration: none;   /* 링크 밑줄 제거 */
+}
+
+.custom-quick-nav li a img {
+  width: 30px;      /* 아이콘 크기 */
+  height: 30px;
+  border-radius: 0; /* 원형으로 만들기 */
+  margin-right: 10px;  /* 이미지와 텍스트 사이 간격 */
+  object-fit: cover;
+}
+
+.custom-quick-nav li a span {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ub-font-base-color);
+  white-space: nowrap;
+}
+
+@media(max-width: 767.98px){
+ .custom-quick-nav {
+  width: 100%;
+  
+  /* ▼ 수정: 스크롤 기능 제거 */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  
+  /* ▼ 수정: nowrap -> normal (줄바꿈 허용) */
+  white-space: normal; 
+  
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+/* (스크롤바 숨김 코드는 이제 필요 없으므로 삭제해도 됩니다) */
+.custom-quick-nav::-webkit-scrollbar {
+  display: none; 
+}
+
+.custom-quick-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px; /* 좌우 끝 여백 */
+  
+  /* ▼ 수정: display: table -> display: flex */
+  display: flex;
+  
+  /* ▼ 추가: flex-wrap (항목이 넘치면 줄바꿈) */
+  flex-wrap: wrap;
+  
+  /* ▼ 추가: justify-content (항목들 중앙 정렬) */
+  justify-content: center;
+  
+  /* ▼ 추가: gap (항목들 사이의 상하/좌우 간격) */
+  gap: 10px 8px; /* 상하 10px, 좌우 8px 간격 */
+}
+
+.custom-quick-nav li {
+  /* ▼ 수정: display 및 margin 제거 (flex와 gap이 대신 처리) */
+  /* display: inline-block; (제거) */
+  /* margin-right: 8px; (제거) */
+}
+
+.custom-quick-nav li:last-child {
+  /* ▼ 수정: 불필요 (제거) */
+  /* margin-right: 0; */
+}
+
+.custom-quick-nav li a {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  
+  /* ▼ 수정: 여백 크기 복구 (좀 더 여유롭게) */
+  padding: 6px 14px 6px 8px; 
+  
+  background-color: #ffffff; /* 배경색 추가 */
+  border: 1px solid #e8e8e8;  /* 테두리 색상 */
+  border-radius: 50px;       /* 알약 모양 */
+  text-decoration: none;     /* 링크 밑줄 제거 */
+}
+
+.custom-quick-nav li a img {
+  /* ▼ 수정: 크기 복구 (좀 더 여유롭게) */
+  width: 26px;      
+  height: 26px;
+  border-radius: 50%; /* 원형 */
+  margin-right: 6px;  
+  object-fit: cover;
+}
+
+.custom-quick-nav li a span {
+  /* ▼ 수정: 크기 복구 (좀 더 여유롭게) */
+  font-size: 13px;
+  font-weight: 500;
+  color: #333333;
+  white-space: nowrap;
+}
+}
+/* ====== 맞춤 퀵 네비게이션 끝 ====== */
+
+/********** 
+prdList 설정 
+*/
+.ec-base-product .prdList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.ec-base-product .prdList >li{
+  flex: none;
+  margin: 0 0 70px 0;
+}
+.ec-base-product .prdList .prdList__item {
+    margin: 0 10px;
+}
+.ec-base-product .prdList .icon__box{
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
