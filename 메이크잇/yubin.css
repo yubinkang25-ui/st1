@@ -709,9 +709,9 @@ content_list
   /* 버튼 크기 */
   height: 45px;
   /* 버튼 크기 */
-  background: #333;
+  background: var(--primary-color);
   /* 배경색 (사이트 디자인에 맞게 수정) */
-  color: #fff;
+  color: var(--ub-font-title-txt02-color);
   /* 화살표 색상 */
 
   border-radius: 50%;
@@ -877,7 +877,6 @@ tab-vertical.tab-slides
   /* ▼ 수정: 크기 복구 (좀 더 여유롭게) */
   width: 26px;      
   height: 26px;
-  border-radius: 50%; /* 원형 */
   margin-right: 6px;  
   object-fit: cover;
 }
@@ -889,6 +888,71 @@ tab-vertical.tab-slides
   color: #333333;
   white-space: nowrap;
 }
+}
+@media(max-width: 376.98px){
+  .custom-quick-nav {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: normal; 
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  .custom-quick-nav::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .custom-quick-nav ul {
+    list-style: none;
+    margin: 0;
+    
+    /* ▼ 수정: 좌우 끝 여백을 16px에서 10px로 줄입니다. */
+    padding: 0 10px;
+    
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    
+    /* ▼ 수정: 아이템 좌우 간격을 8px에서 4px로 줄입니다. */
+    gap: 10px 4px; /* 상하 10px, 좌우 4px */
+  }
+
+  .custom-quick-nav li {
+    /* (비워둠) */
+  }
+
+  .custom-quick-nav li:last-child {
+    /* (비워둠) */
+  }
+
+  .custom-quick-nav li a {
+    display: flex;
+    align-items: center; 
+    
+    /* ▼ 수정: 버튼 내부 좌우 여백을 줄입니다. (14px, 8px -> 10px, 6px) */
+    padding: 6px 10px 6px 6px; 
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+
+  .custom-quick-nav li a img {
+    /* (26px 크기 유지) */
+    width: 20px;      
+    height: 20px;
+    margin-right: 6px;  
+    object-fit: cover;
+  }
+
+  .custom-quick-nav li a span {
+    /* (13px 크기 유지) */
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+    white-space: nowrap;
+  }
 }
 /* ====== 맞춤 퀵 네비게이션 끝 ====== */
 
