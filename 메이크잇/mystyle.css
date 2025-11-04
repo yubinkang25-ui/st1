@@ -5,12 +5,12 @@ mystyle
 /*******
 변수 variables
 *******/
-/* @import url(/myfolder/css/ub-variables.css); */
+@import url(/myfolder/css/ub-variables.css);
 
 /*******
 그리드 시스템
 *******/
-/* @import url(/myfolder/css/ub-grid-system.css); */
+@import url(/myfolder/css/ub-grid-system.css);
 
 .ec-base-product .prdList{
   display: flex; 
