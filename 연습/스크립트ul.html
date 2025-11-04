@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>네비게이션 이미지 뷰어</title>
+<style>
+  :root{
+    --gap:18px;
+    --thumb-size:84px;
+    --thumb-bg:#f2f3f5;
+    --accent:#2b6cb0;
+  }
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Malgun Gothic", sans-serif;
+    padding:20px;
+    background:#fff;
+    color:#222;
+  }
+
+  /* nav 리스트 */
+  .nav-wrap{
+    display: flex;
+    justify-content: center;
+    border-bottom:1px solid #e6e6e6;
+    padding-bottom:14px;
+    margin-bottom:18px;
+  }
+  .nav{
+    display:flex;
+    gap:var(--gap);
+    overflow-x:auto;
+    padding:8px 6px;
+    align-items:flex-end;
+    -webkit-overflow-scrolling:touch;
+  }
+  .nav::-webkit-scrollbar{height:8px}
+  .nav::-webkit-scrollbar-thumb{background:#eee;border-radius:8px}
+
+  .nav-item{
+    flex:0 0 auto;
+    width:110px;
+    text-align:center;
+    cursor:pointer;
+  }
+  .nav-button{
+    border:0;
+    background:transparent;
+    padding:0;
+    display:inline-flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:center;
+    outline:none;
+  }
+  .thumb{
+    width:var(--thumb-size);
+    height:var(--thumb-size);
+    border-radius:50%;
+    background:var(--thumb-bg);
+    display:grid;
+    place-items:center;
+    box-shadow:0 2px 10px rgba(10,20,30,0.06);
+    transition:transform .18s ease, box-shadow .18s ease;
+    overflow:hidden;
+  }
+  .thumb img{width:70%; height:70%; object-fit:contain; display:block;}
+  .label{font-size:13px; color:#444}
+
+  .nav-item.active .thumb{transform:translateY(-6px) scale(1.03); box-shadow:0 8px 20px rgba(8,15,25,0.08); border:2px solid rgba(43,108,176,0.08)}
+  .nav-item:focus-within .thumb{box-shadow:0 6px 18px rgba(8,15,25,0.06)}
+
+  /* 뷰어 */
+  .viewer{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .viewer-main{
+    flex:1 1 600px;
+    min-width:280px;
+    background:#fafafa;
+    border-radius:8px;
+    padding:18px;
+    display:grid;
+    gap:8px;
+    box-shadow:0 4px 18px rgba(8,15,25,0.03);
+  }
+  .viewer-main img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:6px;
+    opacity:0;
+    transform:translateY(6px);
+    transition:opacity .28s ease, transform .28s ease;
+    background:#ddd;
+  }
+  .viewer-main img.show{opacity:1; transform:none}
+  .viewer-caption{font-size:14px; color:#333}
+
+  /* 작은 썸네일 리스트 (선택사항) */
+  .thumb-list{display:flex; gap:8px; margin-top:6px; flex-wrap:wrap}
+  .thumb-list button{border:0; background:transparent; padding:0; cursor:pointer}
+  .thumb-list img{width:64px;height:48px;object-fit:cover;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+  @media (max-width:640px){
+    .nav-item{width:92px}
+    .viewer-main img{height:200px}
+  }
+</style>
+</head>
+<body>
+  <nav class="nav-wrap" aria-label="카테고리 네비게이션">
+    <ul class="nav" id="nav" role="tablist"></ul>
+  </nav>
+
+  <section class="viewer" aria-live="polite">
+    <figure class="viewer-main" id="viewerMain">
+      <img id="mainImage" src="" alt="" />
+      <figcaption class="viewer-caption" id="viewerCaption"></figcaption>
+      <div class="thumb-list" id="viewerThumbs" aria-hidden="false"></div>
+    </figure>
+  </section>
+
+<script>
+(function(){
+  // 항목 데이터 — 이미지 경로는 실제 파일로 교체하세요
+  const items = [
+    {id:1, label:'포스터', thumb:'https://via.placeholder.com/120?text=포스터', image:'https://via.placeholder.com/900x500?text=포스터+큰이미지'},
+    {id:2, label:'엽서/2단엽서', thumb:'https://via.placeholder.com/120?text=엽서', image:'https://via.placeholder.com/900x500?text=엽서+큰이미지'},
+    {id:3, label:'전단지', thumb:'https://via.placeholder.com/120?text=전단지', image:'https://via.placeholder.com/900x500?text=전단지+큰이미지'},
+    {id:4, label:'리플렛', thumb:'https://via.placeholder.com/120?text=리플렛', image:'https://via.placeholder.com/900x500?text=리플렛+큰이미지'},
+    {id:5, label:'POP/스탠드', thumb:'https://via.placeholder.com/120?text=POP', image:'https://via.placeholder.com/900x500?text=POP+큰이미지'},
+    {id:6, label:'책자', thumb:'https://via.placeholder.com/120?text=책자', image:'https://via.placeholder.com/900x500?text=책자+큰이미지'},
+    {id:7, label:'비장한 슈퍼세일', thumb:'https://via.placeholder.com/120?text=세일', image:'https://via.placeholder.com/900x500?text=세일+큰이미지'}
+  ];
+
+  const nav = document.getElementById('nav');
+  const mainImage = document.getElementById('mainImage');
+  const viewerCaption = document.getElementById('viewerCaption');
+  const viewerThumbs = document.getElementById('viewerThumbs');
+
+  function createNavItem(item){
+    const li = document.createElement('li');
+    li.className = 'nav-item';
+    li.setAttribute('role','presentation');
+
+    const btn = document.createElement('button');
+    btn.className = 'nav-button';
+    btn.type = 'button';
+    btn.setAttribute('role','tab');
+    btn.setAttribute('aria-selected','false');
+    btn.dataset.id = item.id;
+
+    const thumb = document.createElement('span');
+    thumb.className = 'thumb';
+    const img = document.createElement('img');
+    img.src = item.thumb;
+    img.alt = item.label;
+    thumb.appendChild(img);
+
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = item.label;
+
+    btn.appendChild(thumb);
+    btn.appendChild(label);
+    li.appendChild(btn);
+
+    btn.addEventListener('click', () => selectItem(item.id));
+    btn.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); }
+      // 좌우 화살표로 포커스 이동
+      if(e.key === 'ArrowRight') { const next = li.nextElementSibling?.querySelector('button'); next?.focus(); }
+      if(e.key === 'ArrowLeft') { const prev = li.previousElementSibling?.querySelector('button'); prev?.focus(); }
+    });
+
+    return li;
+  }
+
+  // 네비 생성
+  items.forEach(it => nav.appendChild(createNavItem(it)));
+
+  // 선택 처리
+  function selectItem(id){
+    // active 클래스 토글
+    Array.from(nav.children).forEach(li => {
+      const btn = li.querySelector('button');
+      const is = String(btn.dataset.id) === String(id);
+      li.classList.toggle('active', is);
+      btn.setAttribute('aria-selected', is ? 'true' : 'false');
+    });
+
+    const item = items.find(i => String(i.id) === String(id));
+    if(!item) return;
+
+    // 이미지 페이드 전환
+    const img = new Image();
+    img.src = item.image;
+    img.onload = () => {
+      mainImage.classList.remove('show');
+      // 잠깐 지연 후 교체 -> 부드러운 전환
+      setTimeout(()=>{
+        mainImage.src = item.image;
+        mainImage.alt = item.label;
+        viewerCaption.textContent = item.label;
+        mainImage.classList.add('show');
+      }, 80);
+    };
+
+    // 작은 썸네일 예시 (같은 이미지 하나만 넣음, 필요 시 배열로 확장)
+    viewerThumbs.innerHTML = '';
+    const tbtn = document.createElement('button');
+    const timg = document.createElement('img');
+    timg.src = item.image;
+    timg.alt = item.label;
+    tbtn.appendChild(timg);
+    tbtn.addEventListener('click', ()=> window.open(item.image, '_blank'));
+    viewerThumbs.appendChild(tbtn);
+  }
+
+  // 초기 선택
+  selectItem(items[0].id);
+
+  // 반응형으로 이미지 높이 재계산 필요하면 처리 가능 (여기선 object-fit 사용)
+})();
+</script>
+</body>
+</html>
