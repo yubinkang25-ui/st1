@@ -4,7 +4,7 @@
 li.on > .sub_cate01 .noChild a {
   background-repeat: no-repeat;  /* 아이콘 반복 없음 */
   background-position: left center; /* 위치: 왼쪽 중앙 */
-  background-size: 26px 26px;     /* 아이콘 크기 (조절 가능) */
+  background-size: 50px 50px;     /* 아이콘 크기 (조절 가능) */
   
   /* ▼ 핵심 ▼
      (아이콘 너비 14px + 텍스트와의 여백 4px = 18px)
