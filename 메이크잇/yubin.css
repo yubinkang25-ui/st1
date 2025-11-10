@@ -2,16 +2,6 @@
 유빈 style
 */
 
-/*******
-변수 variables
-*******/
-@import url(/메이크잇/css/ub-variables.css);
-
-/*******
-그리드 시스템
-*******/
-@import url(/메이크잇/css/ub-grid-system.css);
-
 /*********
 visual-swiper
 hero section용
@@ -980,12 +970,16 @@ prdList 설정
 
 /* --- (필요한 모든 2차 카테고리에 대해 위와 같이 추가) --- */
 
+/****************
+올메뉴 css 
+***************/
 .allmenu-mega{
   --ub-header-max-width:1760px;
   --ub-header-width:92%;
   --allmenu-inner-padding:24px;
   --ub-border-color:#eee;
 }
+
 
 /*********
  햄버거 버튼 래퍼
@@ -1065,7 +1059,6 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
   top:auto;
 }
 
-/* 올메뉴 css */
 
 #allmenu {
   position:absolute;
@@ -1076,10 +1069,8 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
    transform: translateY(100%);
   display: none;
 }
-@media (max-width:1024px) {
+@media (min-width:1024px) {
   
-}
-
 #allmenu.is-active {
  
   opacity: 1;
@@ -1209,9 +1200,8 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
   z-index: 0;
   pointer-events: auto; /* 클릭 닫기 동작 */
 }
-
-/* icon-nav before 없애기  */
-@media(max-width:1024px){
-  .icon.icoNav {display: none;}
 }
 
+@media (max-width:1024px) {
+  .btn-hamburger {display: none;}
+}

@@ -89,14 +89,89 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-image: url('/메이크잇/이미지/아크릴-벽걸이.jpg');
+    background-image: url('/메이크잇/이미지/아크릴-단면형.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
   }
-
-
+   /* 114 (아크릴명패) */
+  #header .inner .top_nav_box .top_category .sub_cate01 li.noChild a[href*="/114/"]::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url('/메이크잇/이미지/아크릴-단면형정사각.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
+   /* 121 (주문제작 굿즈) */
+  #header .inner .top_nav_box .top_category .sub_cate01 li.noChild a[href*="/121/"]::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url('/메이크잇/이미지/그립톡.jpeg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
+  /* 122 (주문제작 굿즈) */
+  #header .inner .top_nav_box .top_category .sub_cate01 li.noChild a[href*="/122/"]::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url('/메이크잇/이미지/키링.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
+   /* 123 (주문제작 굿즈) */
+  #header .inner .top_nav_box .top_category .sub_cate01 li.noChild a[href*="/123/"]::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url('/메이크잇/이미지/판박이스티커.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
+  /* 124 (주문제작 굿즈) */
+  #header .inner .top_nav_box .top_category .sub_cate01 li.noChild a[href*="/124/"]::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: url('/메이크잇/이미지/마그넷.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
 
 
 
