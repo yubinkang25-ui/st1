@@ -2,16 +2,6 @@
 유빈 style
 */
 
-/*******
-변수 variables
-*******/
-@import url(/메이크잇/css/ub-variables.css);
-
-/*******
-그리드 시스템
-*******/
-@import url(/메이크잇/css/ub-grid-system.css);
-
 /*********
 visual-swiper
 hero section용
@@ -759,7 +749,7 @@ tab-vertical.tab-slides
   overflow-x: auto;  /* 핵심: 가로 스크롤 생성 */
   overflow-y: hidden;
   white-space: nowrap; /* 항목들이 한 줄로 이어지도록 함 */
-  padding: 10px 0;
+  padding: 50px 0;
   box-sizing: border-box;
   -ms-overflow-style: none;  /* 스크롤바 숨김 (IE, Edge) */
   scrollbar-width: none;     /* 스크롤바 숨김 (Firefox) */
@@ -772,9 +762,11 @@ tab-vertical.tab-slides
 
 .custom-quick-nav ul {
   list-style: none;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 0 16px; /* 좌우 끝 여백 */
-  display: table;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
 }
 
 .custom-quick-nav li {
@@ -788,10 +780,10 @@ tab-vertical.tab-slides
 
 .custom-quick-nav li a {
   display: flex;
+  justify-content: center;
   align-items: center; /* 세로 중앙 정렬 */
-  padding: 6px 14px 6px 8px; /* 안쪽 여백 */
-  /* 배경색: 흰색 */
-  border: 1px solid var(--section-bg); /* 테두리 */
+  padding: 0.5rem 2rem; /* 안쪽 여백 */
+  border: 1px solid #ddd; /* 테두리 */
   border-radius: 50px;     /* 알약 모양 */
   text-decoration: none;   /* 링크 밑줄 제거 */
 }
@@ -811,7 +803,7 @@ tab-vertical.tab-slides
   white-space: nowrap;
 }
 
-@media(max-width: 767.98px){
+@media(max-width: 768px){
  .custom-quick-nav {
   width: 100%;
   
@@ -846,13 +838,11 @@ tab-vertical.tab-slides
   justify-content: center;
   
   /* ▼ 추가: gap (항목들 사이의 상하/좌우 간격) */
-  gap: 10px 8px; /* 상하 10px, 좌우 8px 간격 */
+  /* gap: 10px 8px;  */
 }
 
 .custom-quick-nav li {
-  /* ▼ 수정: display 및 margin 제거 (flex와 gap이 대신 처리) */
-  /* display: inline-block; (제거) */
-  /* margin-right: 8px; (제거) */
+ margin-right: 0;
 }
 
 .custom-quick-nav li:last-child {
@@ -865,8 +855,7 @@ tab-vertical.tab-slides
   align-items: center; /* 세로 중앙 정렬 */
   
   /* ▼ 수정: 여백 크기 복구 (좀 더 여유롭게) */
-  padding: 6px 14px 6px 8px; 
-  
+  padding: 0.5rem 1rem;
   background-color: #ffffff; /* 배경색 추가 */
   border: 1px solid #e8e8e8;  /* 테두리 색상 */
   border-radius: 50px;       /* 알약 모양 */
@@ -931,7 +920,7 @@ tab-vertical.tab-slides
     align-items: center; 
     
     /* ▼ 수정: 버튼 내부 좌우 여백을 줄입니다. (14px, 8px -> 10px, 6px) */
-    padding: 6px 10px 6px 6px; 
+    /* padding: 6px 10px 6px 6px;  */
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
     text-decoration: none;
@@ -978,43 +967,12 @@ prdList 설정
   right: 0;
   text-align: center;
 }
-/* 1. 'on' 상태일 때 2차 카테고리 <a> 태그의 공통 스타일 */
-li.on > .sub_cate01 .noChild a {
-  background-repeat: no-repeat;  /* 아이콘 반복 없음 */
-  background-position: left center; /* 위치: 왼쪽 중앙 */
-  background-size: 50px 50px;     /* 아이콘 크기 (조절 가능) */
-
-  
-  /* ▼ 핵심 ▼
-     (아이콘 너비 14px + 텍스트와의 여백 4px = 18px)
-     아이콘이 들어갈 공간을 확보하기 위해 텍스트를 오른쪽으로 밀어냄
-  */
-  padding-left: 18px; 
-}
-
-/* 2. 각 카테고리별로 다른 아이콘 이미지 지정 */
-/* '스탠드형' (href 경로에 /111/이 포함된 링크) */
-li.on > .sub_cate01 .noChild a[href*="/111/"] {
-  background-image: url('/메이크잇/이미지/아크릴-스탠드.jpg');
-}
-
-/* '벽걸이형' (href 경로에 /112/가 포함된 링크) */
-li.on > .sub_cate01 .noChild a[href*="/112/"] {
-  background-image: url('/메이크잇/이미지/아크릴-벽걸이.jpg');
-}
-
-/* '아크릴 단면형' (href 경로에 /113/이 포함된 링크) */
-li.on > .sub_cate01 .noChild a[href*="/113/"] {
-  background-image: url('');
-}
-
-/* '아크릴 단면형 정사각' (href 경로에 /114/가 포함된 링크) */
-li.on > .sub_cate01 .noChild a[href*="/114/"] {
-  background-image: url('');
-}
 
 /* --- (필요한 모든 2차 카테고리에 대해 위와 같이 추가) --- */
 
+/****************
+올메뉴 css 
+***************/
 .allmenu-mega{
   --ub-header-max-width:1760px;
   --ub-header-width:92%;
@@ -1101,7 +1059,6 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
   top:auto;
 }
 
-/* 올메뉴 css */
 
 #allmenu {
   position:absolute;
@@ -1112,10 +1069,8 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
    transform: translateY(100%);
   display: none;
 }
-@media (max-width:1024px) {
+@media (min-width:1024px) {
   
-}
-
 #allmenu.is-active {
  
   opacity: 1;
@@ -1245,5 +1200,8 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
   z-index: 0;
   pointer-events: auto; /* 클릭 닫기 동작 */
 }
+}
 
-
+@media (max-width:1024px) {
+  .btn-hamburger {display: none;}
+}
