@@ -92,3 +92,51 @@ jQuery(document).ready(function ($) {
   // 다른 페이지/공통 스크립트는 여기 아래에 계속 작성
   // 예: if ($('.product-list').length) { ... }
 });
+
+ // 문서가 준비되면 playYoutubeOnHover 함수를 호출합니다.
+    playYoutubeOnHover();
+
+// jQuery 3.6.0 기반: .short-section 후손 iframe(유튜브) 마우스 오버 시 자동재생/일시정지 기능 함수화
+// 다른 코드에 영향 없이 필요할 때 호출해서 사용하세요.
+function playYoutubeOnHover() {
+	if (typeof jQuery === 'undefined') return;
+	if (jQuery('.short-section').length === 0) return;
+
+	jQuery('.short-section iframe').each(function() {
+		var $iframe = jQuery(this);
+		// 이미 enablejsapi=1이 있으면 중복 추가 방지
+		var src = $iframe.attr('src');
+		if (src && src.indexOf('youtube.com') !== -1 && src.indexOf('enablejsapi=1') === -1) {
+			var sep = src.indexOf('?') === -1 ? '?' : '&';
+			$iframe.attr('src', src + sep + 'enablejsapi=1');
+		}
+	});
+
+	jQuery('.short-section iframe').off('mouseenter.playYoutubeOnHover mouseleave.playYoutubeOnHover');
+
+	jQuery('.short-section iframe').on('mouseenter.playYoutubeOnHover', function() {
+		var iframe = this;
+		// 유튜브 플레이어에 postMessage로 재생 명령
+		iframe.contentWindow.postMessage(JSON.stringify({
+			event: 'command',
+			func: 'playVideo',
+			args: ''
+		}), '*');
+	});
+
+	jQuery('.short-section iframe').on('mouseleave.playYoutubeOnHover', function() {
+		var iframe = this;
+		// 유튜브 플레이어에 postMessage로 일시정지 명령
+		iframe.contentWindow.postMessage(JSON.stringify({
+			event: 'command',
+			func: 'pauseVideo',
+			args: ''
+		}), '*');
+		// stopVideo를 사용하려면 아래 주석을 해제하세요.
+		iframe.contentWindow.postMessage(JSON.stringify({
+		  event: 'command',
+		  func: 'stopVideo',
+		  args: ''
+		}), '*');
+	});
+}
